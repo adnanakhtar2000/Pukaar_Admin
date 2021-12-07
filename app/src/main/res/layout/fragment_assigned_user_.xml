@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context="Fragments.Assigned_user_Fragment">
+    tools:context="com.example.pukaaradmin.Fragments.Assigned_user_Fragment">
 
   <androidx.recyclerview.widget.RecyclerView
       android:id="@+id/assigned_user_recycler"

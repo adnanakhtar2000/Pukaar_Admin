@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
-    tools:context="Fragments.Session_Summary">
+    tools:context="com.example.pukaaradmin.Fragments.Session_Summary">
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/dwm3"

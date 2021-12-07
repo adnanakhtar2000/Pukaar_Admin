@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context="Fragments.Availble_Therapist">
+    tools:context="com.example.pukaaradmin.Fragments.Availble_Therapist">
 
       <androidx.recyclerview.widget.RecyclerView
          android:id="@+id/availble_therapist_recyclerView"

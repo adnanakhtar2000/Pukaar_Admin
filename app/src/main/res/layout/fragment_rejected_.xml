@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context="Fragments.Rejected_Fragment">
+    tools:context="com.example.pukaaradmin.Fragments.Rejected_Fragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rejected_payment_recycler"
