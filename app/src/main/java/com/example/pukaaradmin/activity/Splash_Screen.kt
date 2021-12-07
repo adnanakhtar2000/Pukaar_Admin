@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import com.example.pukaaradmin.CommonFunction
 import com.example.pukaaradmin.databinding.ActivitySplashScreenBinding
 
 class Splash_Screen : AppCompatActivity() {
@@ -14,9 +15,17 @@ class Splash_Screen : AppCompatActivity() {
         splashScreenBinding = ActivitySplashScreenBinding.inflate(layoutInflater)
         setContentView(splashScreenBinding.root)
         Handler().postDelayed({
-            val intent = Intent(this , Login::class.java);
-            startActivity(intent);
-            finish();
+            if(CommonFunction.getToken(applicationContext).length>10)
+            {
+                val intent = Intent(this, Dashboard::class.java);
+                startActivity(intent);
+                finish();
+            }
+            else {
+                val intent = Intent(this, Login::class.java);
+                startActivity(intent);
+                finish();
+            }
         }, 2000)
     }
 }

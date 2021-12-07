@@ -88,6 +88,35 @@
         app:layout_constraintLeft_toLeftOf="@id/first_name"
         app:layout_constraintRight_toRightOf="parent"
         />
+            <TextView
+                android:id="@+id/lastName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Last Name"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                app:layout_constraintStart_toStartOf="@+id/first_name1"
+                app:layout_constraintTop_toBottomOf="@id/first_name1" />
+            <EditText
+                android:id="@+id/lastNameEditTet"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginRight="15dp"
+                android:hint="Please Enter"
+                android:textColorHint="@color/hint_color"
+                android:paddingLeft="20dp"
+                android:inputType="text"
+                android:textColor="@color/black"
+                android:background="@drawable/add_doctor_form"
+                app:layout_constraintTop_toBottomOf="@id/lastName"
+                app:layout_constraintLeft_toLeftOf="@id/first_name"
+                app:layout_constraintRight_toRightOf="parent"
+                />
+
+
 
     <TextView
         android:id="@+id/about"
@@ -98,8 +127,8 @@
         android:fontFamily="@font/poppins_medium"
         android:textColor="@color/black"
         android:textSize="15dp"
-        app:layout_constraintStart_toStartOf="@+id/first_name1"
-        app:layout_constraintTop_toBottomOf="@id/first_name1" />
+        app:layout_constraintStart_toStartOf="@+id/lastNameEditTet"
+        app:layout_constraintTop_toBottomOf="@id/lastNameEditTet" />
     <EditText
         android:id="@+id/about1"
         android:layout_width="0dp"
@@ -113,7 +142,7 @@
         android:textColor="@color/black"
         android:background="@drawable/add_doctor_form"
         app:layout_constraintTop_toBottomOf="@id/about"
-        app:layout_constraintLeft_toLeftOf="@id/first_name"
+        app:layout_constraintLeft_toLeftOf="@id/lastName"
         app:layout_constraintRight_toRightOf="parent"
         />
     <TextView
@@ -173,6 +202,35 @@
         app:layout_constraintLeft_toLeftOf="@id/first_name"
         app:layout_constraintRight_toRightOf="parent"
         />
+            <TextView
+                android:id="@+id/passwordTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Password"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:fontFamily="@font/poppins_medium"
+                app:layout_constraintStart_toStartOf="@+id/first_name1"
+                app:layout_constraintTop_toBottomOf="@id/email1" />
+
+            <EditText
+                android:id="@+id/passwordEditText"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginRight="15dp"
+                android:hint="Please Enter"
+                android:textColorHint="@color/hint_color"
+                android:paddingLeft="20dp"
+                android:textColor="@color/black"
+                android:inputType="textPostalAddress"
+                android:background="@drawable/add_doctor_form"
+                app:layout_constraintTop_toBottomOf="@id/passwordTextView"
+                app:layout_constraintLeft_toLeftOf="@id/first_name"
+                app:layout_constraintRight_toRightOf="parent"
+                />
+
     <TextView
         android:id="@+id/city"
         android:layout_width="wrap_content"
@@ -183,7 +241,7 @@
         android:textSize="15dp"
         android:fontFamily="@font/poppins_medium"
         app:layout_constraintStart_toStartOf="@+id/first_name1"
-        app:layout_constraintTop_toBottomOf="@id/email1" />
+        app:layout_constraintTop_toBottomOf="@id/passwordEditText" />
 
     <EditText
         android:id="@+id/city1"

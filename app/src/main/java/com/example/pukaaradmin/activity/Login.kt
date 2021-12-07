@@ -3,20 +3,51 @@ package com.example.pukaaradmin.activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
+import com.example.pukaaradmin.ApiClient.ApiClient
+import com.example.pukaaradmin.CommonFunction
+import com.example.pukaaradmin.Response.LoginResponse
+import com.example.pukaaradmin.apiinterface.ApiInterface
 import com.example.pukaaradmin.databinding.ActivityLoginBinding
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class Login : AppCompatActivity() {
 
     private lateinit var loginBinding: ActivityLoginBinding
+    private lateinit var apiInterface: ApiInterface
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         loginBinding= ActivityLoginBinding.inflate(layoutInflater)
+         apiInterface = ApiClient.create()
+
         setContentView(loginBinding.root)
         loginBinding.loginScreenButton.setOnClickListener {
             if (email_validation() && password_validation()){
-                val intent = Intent(this , Dashboard::class.java)
-                startActivity(intent)
-                overridePendingTransition(0,0)}
+
+                val loginResponse = apiInterface.getLoginResponse(loginBinding.mainEmail.text.toString(),loginBinding.mainPassword.text.toString())
+                loginResponse.enqueue( object : Callback<LoginResponse> {
+                    override fun onResponse(call: Call<LoginResponse>?, response: Response<LoginResponse>?) {
+
+                        if(response?.body() != null)
+                        {
+                            CommonFunction.saveToken(applicationContext, response.body()!!.data.token)
+                            CommonFunction.saveName(applicationContext, response.body()!!.data.first_name+" "+response.body()!!.data.last_name)
+                            val intent = Intent(applicationContext , Dashboard::class.java)
+                            startActivity(intent)
+                            overridePendingTransition(0,0)
+                        }
+                        else
+                            Toast.makeText(applicationContext,"Invalid Email and Password...",Toast.LENGTH_LONG).show();
+                    }
+
+                    override fun onFailure(call: Call<LoginResponse>?, t: Throwable?) {
+
+                    }
+                })
+               /**/
+            }
         }
     }
 
