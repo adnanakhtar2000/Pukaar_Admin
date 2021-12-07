@@ -5,7 +5,7 @@
     android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
-    tools:context="Fragments.User_Fragment">
+    tools:context="com.example.pukaaradmin.Fragments.User_Fragment">
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/dwm1"
