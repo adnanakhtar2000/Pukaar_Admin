@@ -71,7 +71,7 @@
 
     <EditText
 
-        android:id="@+id/editText"
+        android:id="@+id/main_password"
         android:layout_width="343dp"
         android:layout_height="44dp"
         android:layout_marginLeft="14dp"

@@ -13,9 +13,37 @@ class Login : AppCompatActivity() {
         loginBinding= ActivityLoginBinding.inflate(layoutInflater)
         setContentView(loginBinding.root)
         loginBinding.loginScreenButton.setOnClickListener {
-            val intent = Intent(this , Dashboard::class.java)
-            startActivity(intent)
-            overridePendingTransition(0,0)
+            if (email_validation() && password_validation()){
+                val intent = Intent(this , Dashboard::class.java)
+                startActivity(intent)
+                overridePendingTransition(0,0)}
+        }
+    }
+
+    private  fun email_validation() : Boolean{
+        val email_validation = loginBinding.mainEmail.text.toString()
+
+        val emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"
+
+        if (email_validation.isEmpty() ){
+            loginBinding.mainEmail.setError("Email filed cannot be empty")
+            return false
+        }
+        if (!email_validation.matches(emailPattern.toRegex()) ){
+            loginBinding.mainEmail.setError("Email Adress in invalid")
+            return false
+        }
+        else return true
+    }
+
+    private  fun password_validation(): Boolean{
+        val password_validation = loginBinding.mainPassword.text.toString().trim()
+        if (password_validation.isEmpty() ){
+            loginBinding.mainPassword.setError("Password must be Entered")
+            return false
+        }
+        else{
+            return true
         }
     }
 }
