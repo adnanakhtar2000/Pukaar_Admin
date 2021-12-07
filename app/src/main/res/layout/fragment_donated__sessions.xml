@@ -1,0 +1,100 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    tools:context="Fragments.Donated_Sessions">
+
+<TextView
+    android:id="@+id/donated_sessions"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Total Number of Donated sessions \n
+50"
+    android:gravity="center"
+
+    android:layout_marginTop="22dp"
+    android:textSize="16dp"
+    android:textFontWeight="400"
+    android:textColor="@color/Main_color"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    />
+
+
+    <View
+        android:id="@+id/ss_view"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:background="#D2EFFC"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/donated_sessions"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Doctor"
+        android:textColor="@color/black"
+        android:textSize="14dp"
+        android:layout_marginLeft="13dp"
+        android:layout_marginRight="313dp"
+        android:fontFamily="@font/poppins_medium"
+        app:layout_constraintTop_toTopOf="@+id/ss_view"
+        app:layout_constraintBottom_toBottomOf="@id/ss_view"
+        app:layout_constraintLeft_toLeftOf="@id/ss_view"
+        app:layout_constraintRight_toRightOf="@id/ss_view"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date"
+        android:textColor="@color/black"
+        android:textSize="14dp"
+        android:layout_marginLeft="107dp"
+        android:layout_marginRight="234dp"
+        android:fontFamily="@font/poppins_medium"
+        app:layout_constraintTop_toTopOf="@+id/ss_view"
+        app:layout_constraintBottom_toBottomOf="@id/ss_view"
+        app:layout_constraintLeft_toLeftOf="@id/ss_view"
+        app:layout_constraintRight_toRightOf="@id/ss_view"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Time"
+        android:textColor="@color/black"
+        android:textSize="14dp"
+        android:layout_marginLeft="201dp"
+        android:layout_marginRight="139dp"
+        android:fontFamily="@font/poppins_medium"
+        app:layout_constraintTop_toTopOf="@+id/ss_view"
+        app:layout_constraintBottom_toBottomOf="@id/ss_view"
+        app:layout_constraintLeft_toLeftOf="@id/ss_view"
+        app:layout_constraintRight_toRightOf="@id/ss_view"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Session Taken"
+        android:textColor="@color/black"
+        android:textSize="14dp"
+        android:layout_marginLeft="267dp"
+        android:layout_marginRight="7dp"
+        android:fontFamily="@font/poppins_medium"
+        app:layout_constraintTop_toTopOf="@+id/ss_view"
+        app:layout_constraintBottom_toBottomOf="@id/ss_view"
+        app:layout_constraintLeft_toLeftOf="@id/ss_view"
+        app:layout_constraintRight_toRightOf="@id/ss_view"/>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/donated_sessions_recycler"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/ss_view"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="5dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

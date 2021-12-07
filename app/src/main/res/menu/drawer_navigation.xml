@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Session Summary" android:id="@+id/left_session_summary" />
+    <item android:title="Notification" android:id="@+id/left_notification"  />
+
+    <item android:title="Settings" android:id="@+id/left_setting" />
+    <item android:title="Pending Requests" android:id="@+id/left_prnding_request" />
+    <item android:title="Contact Support" android:id="@+id/left_contact_support" />
+    <item android:title="About" android:id="@+id/left_about" />
+    <item android:title="Donated Sessions" android:id="@+id/left_donated_sessions" />
+</menu>
