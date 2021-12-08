@@ -52,7 +52,8 @@ class Add_Therapist : AppCompatActivity() {
                     }
 
                     override fun onFailure(call: Call<SignUpResponse>?, t: Throwable?) {
-
+                        Toast.makeText(applicationContext,"Error...",
+                            Toast.LENGTH_LONG).show();
                     }
                 })
             }
