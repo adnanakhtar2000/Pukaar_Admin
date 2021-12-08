@@ -2,9 +2,11 @@ package com.example.pukaaradmin.apiinterface
 
 import com.example.pukaaradmin.Response.LoginResponse
 import com.example.pukaaradmin.Response.SignUpResponse
+import com.example.pukaaradmin.Response.TherapistListResponse
 import retrofit2.Call
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
+import retrofit2.http.Header
 import retrofit2.http.POST
 
 interface ApiInterface {
@@ -25,4 +27,7 @@ interface ApiInterface {
                          @Field("service_therapist_provider") provider: String,
                          @Field("therapist_focus") focus: String,
                          @Field("type_of_doctor") doctor: String) : Call<SignUpResponse>
+    @FormUrlEncoded
+    @POST("user")
+    fun getUserTherapistResponse(@Header("Authorization") header: String,@Field("role") role: String,@Field("type") type: String) : Call<TherapistListResponse>
 }

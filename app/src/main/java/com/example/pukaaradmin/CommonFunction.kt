@@ -2,7 +2,7 @@ package com.example.pukaaradmin
 
 import android.content.Context
 import android.content.SharedPreferences
-import java.security.AccessControlContext
+import java.text.SimpleDateFormat
 
 class CommonFunction {
     companion object {
@@ -36,6 +36,11 @@ class CommonFunction {
                 context.getSharedPreferences("PukaarAdmin", Context.MODE_PRIVATE)
             val token = sharedPreferences.getString("name", "")
             return token.toString();
+        }
+        fun dateFormat(dateTime: String): String {
+            val parser = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss")
+            val formatter = SimpleDateFormat("dd-MM-yyyy hh:mm a")
+            return formatter.format(parser.parse(dateTime))
         }
     }
 }
