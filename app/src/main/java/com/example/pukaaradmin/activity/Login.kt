@@ -32,11 +32,26 @@ class Login : AppCompatActivity() {
 
                         if(response?.body() != null)
                         {
-                            CommonFunction.saveToken(applicationContext, response.body()!!.data.token)
-                            CommonFunction.saveName(applicationContext, response.body()!!.data.first_name+" "+response.body()!!.data.last_name)
-                            val intent = Intent(applicationContext , Dashboard::class.java)
-                            startActivity(intent)
-                            overridePendingTransition(0,0)
+                            var isAdmin : Boolean = false
+                            for (item :String in response.body()!!.data.role)
+                            {
+                                if(item == "admin")
+                                    isAdmin = true
+                            }
+                            if(isAdmin) {
+                                CommonFunction.saveToken(
+                                    applicationContext,
+                                    response.body()!!.data.token
+                                )
+                                CommonFunction.saveName(
+                                    applicationContext,
+                                    response.body()!!.data.first_name + " " + response.body()!!.data.last_name
+                                )
+                                val intent = Intent(applicationContext, Dashboard::class.java)
+                                startActivity(intent)
+                                overridePendingTransition(0, 0)
+                            }else
+                                Toast.makeText(applicationContext,"Please Enter Admin Email and Password...",Toast.LENGTH_LONG).show();
                         }
                         else
                             Toast.makeText(applicationContext,"Invalid Email and Password...",Toast.LENGTH_LONG).show();
