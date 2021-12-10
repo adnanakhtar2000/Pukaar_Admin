@@ -6,9 +6,11 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.pukaaradmin.CommonFunction
 import com.example.pukaaradmin.R
+import com.example.pukaaradmin.Response.UsersData
 
-class Assigned_user_recycler_Adapater(val profile_image : List<Int> , val patient_name : List<String> , val time : List<String>): RecyclerView.Adapter<Unassigned_user_viewholder>() {
+class Assigned_user_recycler_Adapater(val data: ArrayList<UsersData>) : RecyclerView.Adapter<Unassigned_user_viewholder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Unassigned_user_viewholder {
         val inflater : LayoutInflater = LayoutInflater.from(parent.context)
         val view : View = inflater.inflate(R.layout.user_screen , parent , false)
@@ -16,13 +18,13 @@ class Assigned_user_recycler_Adapater(val profile_image : List<Int> , val patien
     }
 
     override fun onBindViewHolder(holder: Unassigned_user_viewholder, position: Int) {
-       holder.profile_image.setImageResource(profile_image[position])
-        holder.patient_name.text= patient_name[position]
-        holder.time.text = time[position]
+        //holder.profile_image.setImageResource(data[position])
+        holder.patient_name.text = data[position].first_name +" "+data[position].last_name
+        holder.time.text = CommonFunction.dateFormat(data[position].created_at)
     }
 
     override fun getItemCount(): Int {
-       return  patient_name.size
+       return  data.size
     }
 }
 class Aassigned_user_viewholder(itemView: View): RecyclerView.ViewHolder(itemView){

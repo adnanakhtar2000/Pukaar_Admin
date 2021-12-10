@@ -25,9 +25,6 @@ class Availble_Therapist : Fragment() {
 
     private lateinit var apiInterface: ApiInterface
     private  lateinit var availbleTherapistBinding: FragmentAvailbleTherapistBinding
-    val profile_image : List<Int> = listOf(R.drawable.profile_image , R.drawable.profile_image )
-    val profile_name : List<String> = listOf("Mawra Hussian" , "Bilal Anjum" )
-    val time : List<String> = listOf("01:23 AM" , "02:10 PM")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,9 +50,6 @@ class Availble_Therapist : Fragment() {
                     recyclerView.adapter = Availble_Therapist_recycler_Adapater(response.body()!!.users.data)
                     recyclerView.layoutManager = LinearLayoutManager(context , LinearLayoutManager.VERTICAL , false)
                 }
-                else
-                    Toast.makeText(requireContext(),"User Already Exists...",
-                        Toast.LENGTH_LONG).show();
             }
 
             override fun onFailure(call: Call<TherapistListResponse>?, t: Throwable?) {
