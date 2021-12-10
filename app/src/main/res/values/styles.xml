@@ -29,6 +29,47 @@
         <item name="android:colorForeground">#42221f1f
         </item>
     </style>
+
+    <style name="sessions">
+        <![CDATA[ <style name="sessions">          <item name="android:textSize">             12sp         </item>          <item name="android:textColor">             #FEFEFE         </item>      </style>]]></style>
+
+    <style name="pkr_1200_">
+        <![CDATA[ <style name="pkr_1200_">          <item name="android:textSize">             12sp         </item>          <item name="android:textColor">             #FEFEFE         </item>      </style>]]></style>
+
     <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore</string>
     <!-- TODO: Remove or change this placeholder text -->
+
+    <style name="some_id3">
+
+        <item name="android:textSize">
+            36sp
+        </item>
+
+        <item name="android:textColor">
+            #FEFEFE
+        </item>
+
+    </style>
+    <style name="pkr_3600_">
+
+        <item name="android:textSize">
+            12sp
+        </item>
+
+        <item name="android:textColor">
+            #FEFEFE
+        </item>
+
+    </style>
+    <style name="pkr_4200_">
+
+        <item name="android:textSize">
+            12sp
+        </item>
+
+        <item name="android:textColor">
+            #FEFEFE
+        </item>
+
+    </style>
 </resources>

@@ -1,5 +1,6 @@
 package com.example.pukaaradmin.activity
 
+import android.content.Intent
 import com.example.pukaaradmin.Fragments.*
 import com.example.pukaaradmin.Genral_Screens_Fragments.Setting_Fragment
 import androidx.appcompat.app.AppCompatActivity
@@ -69,6 +70,12 @@ dashboardBinding.bottomNavigation1.setOnNavigationItemSelectedListener{
                 R.id.left_donated_sessions ->{
                     val donated_sessions = Donated_Sessions()
                     supportFragmentManager.beginTransaction().replace(R.id.container, donated_sessions).commit()
+                }
+                R.id.Logout ->{
+                    val intent = Intent(applicationContext , Login::class.java)
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                    startActivity(intent)
+                    finish()
                 }
 
             }

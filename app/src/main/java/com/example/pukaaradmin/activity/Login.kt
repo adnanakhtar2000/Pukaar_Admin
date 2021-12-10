@@ -32,6 +32,7 @@ class Login : AppCompatActivity() {
 
                         if(response?.body() != null)
                         {
+
                             CommonFunction.saveToken(applicationContext, response.body()!!.data.token)
                             CommonFunction.saveName(applicationContext, response.body()!!.data.first_name+" "+response.body()!!.data.last_name)
                             val intent = Intent(applicationContext , Dashboard::class.java)
