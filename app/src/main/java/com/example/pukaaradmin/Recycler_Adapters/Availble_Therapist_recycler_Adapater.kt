@@ -17,6 +17,8 @@ class Availble_Therapist_recycler_Adapater(val data: ArrayList<UsersData>) : Rec
 private  lateinit var itemClickListener : ItemClickListener
 private lateinit var therapis_response : List<TherapistListResponse>
 
+   /* private List<DiaryResponse.FirstDatum.Datum> diaryResponseData;*/
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Availble_Therapist_viewholder {
         val inflater : LayoutInflater = LayoutInflater.from(parent.context)
         val view : View = inflater.inflate(R.layout.user_screen , parent , false)

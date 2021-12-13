@@ -84,6 +84,11 @@ dashboardBinding.bottomNavigation1.setOnNavigationItemSelectedListener{
                     startActivity(intent)
 
                 }
+                R.id.left_bank_detail ->{
+                    val intent = Intent(applicationContext , Add_Bank_Detail::class.java)
+                    startActivity(intent)
+
+                }
 
             }
             dashboardBinding.drawerLayout.closeDrawer(GravityCompat.START)

@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".activity.Add_Bank_Detail">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/white"
+        android:elevation="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+
+    <ImageView
+        android:id="@+id/dehaze"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="18dp"
+        android:elevation="15dp"
+        android:src="@drawable/ic_setting"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="20dp"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintTop_toTopOf="@id/toolbar"
+        app:tint="@color/black" />
+
+    <ImageView
+        android:id="@+id/back_arrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="18dp"
+        android:elevation="15dp"
+        android:src="@drawable/ic_baseline_arrow_back_24"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="20dp"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintTop_toTopOf="@id/toolbar"
+        app:tint="@color/black" />
+
+    <TextView
+        android:id="@+id/title_toolbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/toolbar"
+        android:elevation="15dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:gravity="center"
+        android:text="Add Bank Details"
+        android:textColor="@color/Main_color"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="@+id/dehaze"
+        app:layout_constraintLeft_toLeftOf="@id/toolbar"
+        app:layout_constraintRight_toRightOf="@id/toolbar"
+        app:layout_constraintTop_toTopOf="@+id/dehaze" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="23dp"
+        android:layout_marginTop="115dp"
+        android:fontFamily="@font/poppins"
+        android:text="Bank Name"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        app:layout_constraintLeft_toLeftOf="paren"
+        app:layout_constraintStart_toStartOf="@+id/bank_name"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/bank_name"
+        android:layout_width="343dp"
+        android:layout_height="44dp"
+        android:layout_marginLeft="14dp"
+        android:layout_marginTop="147dp"
+        android:layout_marginRight="18dp"
+        android:background="@drawable/form"
+        android:hint="Enter Here..."
+        android:paddingRight="10dp"
+        android:inputType="textPersonName"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/hint_color"
+        android:textSize="15dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="23dp"
+        android:layout_marginTop="194dp"
+        android:layout_marginRight="286dp"
+        android:fontFamily="@font/poppins"
+        android:text="Branch Name"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/Branch_name"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/Branch_name"
+        android:layout_width="343dp"
+        android:layout_height="44dp"
+        android:layout_marginLeft="14dp"
+        android:layout_marginTop="223dp"
+        android:layout_marginRight="18dp"
+        android:background="@drawable/form"
+        android:hint="Enter Here..."
+        android:paddingRight="10dp"
+        android:inputType="textPersonName"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/hint_color"
+        android:textSize="15dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="23dp"
+        android:layout_marginRight="286dp"
+        android:fontFamily="@font/poppins"
+        android:text="Account Number"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/Branch_name"
+        app:layout_constraintTop_toBottomOf="@+id/Branch_name" />
+
+    <EditText
+        android:id="@+id/account_number"
+        android:layout_width="343dp"
+        android:layout_height="44dp"
+        android:layout_marginLeft="14dp"
+        android:layout_marginRight="18dp"
+        android:background="@drawable/form"
+        android:hint="Enter Here..."
+        android:inputType="number"
+        android:paddingLeft="20dp"
+        android:layout_marginTop="5dp"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/hint_color"
+        android:textSize="15dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="23dp"
+        android:layout_marginRight="286dp"
+        android:fontFamily="@font/poppins"
+        android:text="Account Title"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/Branch_name"
+        app:layout_constraintTop_toBottomOf="@+id/account_number" />
+
+    <EditText
+        android:id="@+id/account_title"
+        android:layout_width="343dp"
+        android:layout_height="44dp"
+        android:layout_marginLeft="14dp"
+        android:layout_marginRight="18dp"
+        android:background="@drawable/form"
+        android:hint="Enter Here..."
+        android:inputType="textPersonName"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/hint_color"
+        android:textSize="15dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="23dp"
+        android:layout_marginRight="286dp"
+        android:fontFamily="@font/poppins"
+        android:text="IBAN"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/Branch_name"
+        app:layout_constraintTop_toBottomOf="@+id/account_title" />
+
+    <EditText
+        android:id="@+id/account_iban"
+        android:layout_width="343dp"
+        android:layout_height="44dp"
+        android:layout_marginLeft="14dp"
+        android:layout_marginRight="18dp"
+        android:background="@drawable/form"
+        android:hint="Enter Here..."
+        android:inputType="textPersonName"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/hint_color"
+        android:textSize="15dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+
+    <Button
+        android:id="@+id/add_bank_button"
+        android:layout_width="343dp"
+        android:layout_height="44dp"
+        android:background="@drawable/login_button"
+        android:fontFamily="@font/poppins"
+        android:text="Add Bank"
+        android:layout_marginTop="50dp"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/account_iban" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

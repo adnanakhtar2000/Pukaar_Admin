@@ -11,5 +11,6 @@
     <item android:title="About" android:id="@+id/left_about" />
     <item android:title="Donated Sessions" android:id="@+id/left_donated_sessions" />
     <item android:title="Special Offers" android:id="@+id/left_special_offers" />
+    <item android:title="Add Bank Details" android:id="@+id/left_bank_detail" />
     <item android:title="Logout" android:id="@+id/Logout" />
 </menu>
