@@ -17,6 +17,7 @@ class Login : AppCompatActivity() {
 
     private lateinit var loginBinding: ActivityLoginBinding
     private lateinit var apiInterface: ApiInterface
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         loginBinding= ActivityLoginBinding.inflate(layoutInflater)
@@ -32,14 +33,13 @@ class Login : AppCompatActivity() {
 
                         if(response?.body() != null)
                         {
-<<<<<<< HEAD
+
 
                             CommonFunction.saveToken(applicationContext, response.body()!!.data.token)
                             CommonFunction.saveName(applicationContext, response.body()!!.data.first_name+" "+response.body()!!.data.last_name)
-                            val intent = Intent(applicationContext , Dashboard::class.java)
-                            startActivity(intent)
+
                             overridePendingTransition(0,0)
-=======
+
                             var isAdmin : Boolean = false
                             for (item :String in response.body()!!.data.role)
                             {
@@ -57,10 +57,11 @@ class Login : AppCompatActivity() {
                                 )
                                 val intent = Intent(applicationContext, Dashboard::class.java)
                                 startActivity(intent)
+                                finish()
                                 overridePendingTransition(0, 0)
                             }else
                                 Toast.makeText(applicationContext,"Please Enter Admin Email and Password...",Toast.LENGTH_LONG).show();
->>>>>>> c761d0c5ea82dd4dded1409371529b75b8678d6d
+
                         }
                         else
                             Toast.makeText(applicationContext,"Invalid Email and Password...",Toast.LENGTH_LONG).show();

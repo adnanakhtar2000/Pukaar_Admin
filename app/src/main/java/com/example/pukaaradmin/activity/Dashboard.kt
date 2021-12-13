@@ -71,11 +71,18 @@ dashboardBinding.bottomNavigation1.setOnNavigationItemSelectedListener{
                     val donated_sessions = Donated_Sessions()
                     supportFragmentManager.beginTransaction().replace(R.id.container, donated_sessions).commit()
                 }
+
+
                 R.id.Logout ->{
                     val intent = Intent(applicationContext , Login::class.java)
                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
                     startActivity(intent)
                     finish()
+                }
+                R.id.left_special_offers ->{
+                    val intent = Intent(applicationContext , Speacial_Offer_create::class.java)
+                    startActivity(intent)
+
                 }
 
             }
