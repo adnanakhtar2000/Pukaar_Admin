@@ -30,4 +30,8 @@ interface ApiInterface {
     @FormUrlEncoded
     @POST("user")
     fun getUserTherapistResponse(@Header("Authorization") header: String,@Field("role") role: String,@Field("type") type: String) : Call<TherapistListResponse>
+
+    @FormUrlEncoded
+    @POST("package")
+    fun createSpecialOffer(@Header("Authorization") header: String,@Field("number_of_sessions") number: Int,@Field("price") price: String) : Call<String>
 }

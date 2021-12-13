@@ -36,7 +36,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/main_email"
+        android:id="@+id/mainEmail"
         android:layout_width="343dp"
         android:layout_height="44dp"
         android:layout_marginLeft="14dp"
@@ -72,7 +72,7 @@
 
     <EditText
 
-        android:id="@+id/main_password"
+        android:id="@+id/mainPassword"
         android:layout_width="343dp"
         android:layout_height="44dp"
         android:layout_marginLeft="14dp"
