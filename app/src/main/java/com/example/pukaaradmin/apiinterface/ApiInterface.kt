@@ -33,5 +33,8 @@ interface ApiInterface {
 
     @FormUrlEncoded
     @POST("package")
-    fun createSpecialOffer(@Header("Authorization") header: String,@Field("number_of_sessions") number: Int,@Field("price") price: String) : Call<String>
+    fun createSpecialOffer(@Header("Authorization") header: String,@Field("number_of_sessions") number: Int,@Field("price") price: String) : Call<String>    @FormUrlEncoded
+
+    @POST("bank")
+    fun createBankDetail(@Header("Authorization") header: String,@Field("bank_name") name: String,@Field("branch_name") branchName: String,@Field("account_number") accountNumber: String,@Field("account_title") accountTitle: String,@Field("iban") iban: String) : Call<String>
 }
