@@ -45,11 +45,11 @@ class Add_Bank_Detail : AppCompatActivity() {
         }
     }
     private  fun validation() : Boolean{
-        val bankName = addBankDetailBinding.bankName.text.toString()
+        val bankName =   addBankDetailBinding.bankName.text.toString()
         val branchName = addBankDetailBinding.BranchName.text.toString()
-        val accNumber = addBankDetailBinding.accountNumber.text.toString()
-        val accTitle= addBankDetailBinding.accountTitle.text.toString()
-        val iban= addBankDetailBinding.accountIban.text.toString()
+        val accNumber =  addBankDetailBinding.accountNumber.text.toString()
+        val accTitle =   addBankDetailBinding.accountTitle.text.toString()
+        val iban =       addBankDetailBinding.accountIban.text.toString()
 
 
          if (bankName.isEmpty() ){
