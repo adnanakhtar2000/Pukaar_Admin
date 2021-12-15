@@ -44,7 +44,7 @@ class Reassigned_user_Fragment : Fragment() {
                 {
 
                     val recyclerView = reassignedUserBinding.ReAssignedUserRecycler
-                    recyclerView.adapter = Assigned_user_recycler_Adapater(response.body()!!.users.data)
+                    recyclerView.adapter = Assigned_user_recycler_Adapater(response.body()!!.users.data , requireContext())
                     recyclerView.layoutManager = LinearLayoutManager(context , LinearLayoutManager.VERTICAL , false)
                 }
             }

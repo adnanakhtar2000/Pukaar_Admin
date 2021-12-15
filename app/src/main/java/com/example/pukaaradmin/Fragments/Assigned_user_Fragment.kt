@@ -43,7 +43,7 @@ private lateinit var apiInterface: ApiInterface
                 if(response?.body() != null)
                 {
                     val recyclerView = assignedUserBinding.assignedUserRecycler
-                    recyclerView.adapter = Assigned_user_recycler_Adapater(response.body()!!.users.data)
+                    recyclerView.adapter = Assigned_user_recycler_Adapater(response.body()!!.users.data , requireContext())
                     recyclerView.layoutManager= LinearLayoutManager(context , LinearLayoutManager.VERTICAL , false)
                 }
             }

@@ -45,7 +45,7 @@ class UnAssigned_User_fragment : Fragment() {
                 if(response?.body() != null)
                 {
                     val reccyler_view = unAssignedUserFragmentBinding.unassignedUserRecycler
-                    reccyler_view.adapter = Assigned_user_recycler_Adapater(response.body()!!.users.data)
+                    reccyler_view.adapter = Assigned_user_recycler_Adapater(response.body()!!.users.data , requireContext())
                     reccyler_view.layoutManager = LinearLayoutManager(context , LinearLayoutManager.VERTICAL , false)
                 }
             }

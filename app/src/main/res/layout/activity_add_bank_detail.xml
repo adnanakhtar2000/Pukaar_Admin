@@ -63,17 +63,7 @@
         app:layout_constraintTop_toTopOf="@+id/dehaze" />
 
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="23dp"
-        android:layout_marginTop="115dp"
-        android:fontFamily="@font/poppins"
-        android:text="Bank Name"
-        android:textColor="@color/black"
-        android:textSize="15dp"
-        app:layout_constraintLeft_toLeftOf="paren"
-        app:layout_constraintStart_toStartOf="@+id/bank_name"
-        app:layout_constraintTop_toTopOf="parent" />
+
 
     <EditText
         android:id="@+id/bank_name"

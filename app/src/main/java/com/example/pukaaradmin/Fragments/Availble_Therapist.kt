@@ -47,8 +47,10 @@ class Availble_Therapist : Fragment() {
                 if(response?.body() != null)
                 {
                     val recyclerView = availbleTherapistBinding.availbleTherapistRecyclerView
-                    recyclerView.adapter = Availble_Therapist_recycler_Adapater(response.body()!!.users.data)
+                    recyclerView.adapter = Availble_Therapist_recycler_Adapater(response.body()!!.users.data  ,requireContext())
                     recyclerView.layoutManager = LinearLayoutManager(context , LinearLayoutManager.VERTICAL , false)
+                    //setting data
+
                 }
             }
 
