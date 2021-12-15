@@ -337,6 +337,7 @@ android:paddingRight="10dp"
         app:layout_constraintTop_toBottomOf="@id/therapist1" />
 
     <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/activeSwitch"
         android:layout_width="60dp"
         android:layout_height="wrap_content"
         android:shadowColor="@color/Main_color"

@@ -32,8 +32,15 @@ class Add_Therapist : AppCompatActivity() {
                 /*val intent = Intent(this , Added_Therapist::class.java)
                 startActivity(intent)
                 overridePendingTransition(0,0)*/
+                var statusValue : Int = 1
+                val status = addTherapistBinding.activeSwitch.isChecked
+                statusValue = if(status)
+                    1
+                else
+                    2
+
                 val signUpResponse = apiInterface.getRegisterResponse(addTherapistBinding.firstName1.text.toString(),addTherapistBinding.lastNameEditTet.text.toString(),
-                    addTherapistBinding.email1.text.toString(),addTherapistBinding.mobileNumber1.text.toString(),addTherapistBinding.passwordEditText.text.toString(),addTherapistBinding.passwordEditText.text.toString(),"therapist",addTherapistBinding.about1.text.toString(),addTherapistBinding.city1.text.toString(),addTherapistBinding.service1.text.toString(),addTherapistBinding.therapist1.text.toString(),addTherapistBinding.typeDoctor1.text.toString())
+                    addTherapistBinding.email1.text.toString(),addTherapistBinding.mobileNumber1.text.toString(),addTherapistBinding.passwordEditText.text.toString(),addTherapistBinding.passwordEditText.text.toString(),"therapist",addTherapistBinding.about1.text.toString(),addTherapistBinding.city1.text.toString(),addTherapistBinding.service1.text.toString(),addTherapistBinding.therapist1.text.toString(),addTherapistBinding.typeDoctor1.text.toString(),statusValue)
                 signUpResponse.enqueue( object : Callback<SignUpResponse> {
                     override fun onResponse(call: Call<SignUpResponse>?, response: Response<SignUpResponse>?) {
 
