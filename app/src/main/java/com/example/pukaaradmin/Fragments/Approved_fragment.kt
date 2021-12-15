@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.pukaaradmin.ApiClient.ApiClient
 import com.example.pukaaradmin.CommonFunction
 import com.example.pukaaradmin.R
+import com.example.pukaaradmin.Recycler_Adapters.Rejected_payments_recycler_Adapater
 import com.example.pukaaradmin.Response.UserSessionResponse
 import com.example.pukaaradmin.apiinterface.ApiInterface
 import com.example.pukaaradmin.databinding.FragmentApprovedFragmentBinding
@@ -23,9 +24,7 @@ class Approved_fragment : Fragment() {
 
     private lateinit var approvedFragmentBinding: FragmentApprovedFragmentBinding
 
-    val profile_image : List<Int> = listOf(R.drawable.profile_image , R.drawable.profile_image , R.drawable.profile_image)
-    val profile_name : List<String> = listOf("Uzair Afzal" , "Bilal saeed" , "Uzma Bukhari")
-    val time : List<String> = listOf("09:23 AM" , "12:10 PM", "06:50 AM")
+
     private lateinit var apiInterface: ApiInterface
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -48,7 +47,10 @@ class Approved_fragment : Fragment() {
                 response: Response<UserSessionResponse>?
             ) {
                 if (response?.body() != null) {
-                    Toast.makeText(requireContext(), response.body()!!.data.size.toString(),Toast.LENGTH_SHORT).show()
+                    val recyclerView = approvedFragmentBinding.approvedPaymentRecycler
+                    recyclerView.adapter = Approved_payments_recycler_Adapater(response.body()!!.data  ,requireContext())
+                    recyclerView.layoutManager = LinearLayoutManager(context , LinearLayoutManager.VERTICAL , false)
+                    //setting data
                 }
             }
 
@@ -56,8 +58,7 @@ class Approved_fragment : Fragment() {
 
             }
         })
-        reccyler_view.adapter = Approved_payments_recycler_Adapater(profile_image , profile_name , time)
-        reccyler_view.layoutManager = LinearLayoutManager(context , LinearLayoutManager.VERTICAL , false)
+
 
 
         return approvedFragmentBinding.root

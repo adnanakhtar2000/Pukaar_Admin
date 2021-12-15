@@ -11,6 +11,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.pukaaradmin.ApiClient.ApiClient
 import com.example.pukaaradmin.CommonFunction
 import com.example.pukaaradmin.R
+import com.example.pukaaradmin.Recycler_Adapters.Availble_Therapist_recycler_Adapater
+import com.example.pukaaradmin.Recycler_Adapters.Rejected_payments_recycler_Adapater
 import com.example.pukaaradmin.Response.UserSessionResponse
 import com.example.pukaaradmin.apiinterface.ApiInterface
 import com.example.pukaaradmin.databinding.FragmentRejectedBinding
@@ -23,9 +25,7 @@ class Rejected_Fragment : Fragment() {
 
 private lateinit var rejectedBinding: FragmentRejectedBinding
 
-    val profile_image : List<Int> = listOf(R.drawable.profile_image , R.drawable.profile_image )
-    val profile_name : List<String> = listOf("Uzair Afzal" , "Bilal saeed" ,)
-    val time : List<String> = listOf("09:23 AM" , "12:10 PM")
+
     private lateinit var apiInterface: ApiInterface
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -48,7 +48,11 @@ private lateinit var rejectedBinding: FragmentRejectedBinding
                 response: Response<UserSessionResponse>?
             ) {
                 if (response?.body() != null) {
-                    Toast.makeText(requireContext(), response.body()!!.data.size.toString(), Toast.LENGTH_SHORT).show()
+                    val recyclerView = rejectedBinding.rejectedPaymentRecycler
+                    recyclerView.adapter = Rejected_payments_recycler_Adapater(response.body()!!.data  ,requireContext())
+                    recyclerView.layoutManager = LinearLayoutManager(context , LinearLayoutManager.VERTICAL , false)
+                    //setting data
+
                 }
             }
 
@@ -56,8 +60,6 @@ private lateinit var rejectedBinding: FragmentRejectedBinding
 
             }
         })
-        reccyler_view.adapter = Approved_payments_recycler_Adapater(profile_image , profile_name , time)
-        reccyler_view.layoutManager = LinearLayoutManager(context , LinearLayoutManager.VERTICAL , false)
 
 
         return  rejectedBinding.root

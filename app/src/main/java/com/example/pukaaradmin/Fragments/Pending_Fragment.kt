@@ -11,6 +11,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.pukaaradmin.ApiClient.ApiClient
 import com.example.pukaaradmin.CommonFunction
 import com.example.pukaaradmin.R
+import com.example.pukaaradmin.Recycler_Adapters.Availble_Therapist_recycler_Adapater
+import com.example.pukaaradmin.Recycler_Adapters.Rejected_payments_recycler_Adapater
 import com.example.pukaaradmin.Response.UserSessionResponse
 import com.example.pukaaradmin.apiinterface.ApiInterface
 import com.example.pukaaradmin.databinding.FragmentPendingBinding
@@ -21,9 +23,7 @@ import retrofit2.Response
 
 class Pending_Fragment : Fragment() {
 private lateinit var pendingBinding: FragmentPendingBinding
-    val profile_image : List<Int> = listOf(R.drawable.profile_image )
-    val profile_name : List<String> = listOf("Uzair Afzal" )
-    val time : List<String> = listOf("09:23 AM" )
+
     private lateinit var apiInterface: ApiInterface
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -48,7 +48,12 @@ private lateinit var pendingBinding: FragmentPendingBinding
                 response: Response<UserSessionResponse>?
             ) {
                 if (response?.body() != null) {
-                    Toast.makeText(requireContext(), response.body()!!.data.size.toString(), Toast.LENGTH_SHORT).show()
+                    val reccyler_view = pendingBinding.pendingPaymentRecycler
+
+                    reccyler_view.adapter = Pending_payments_recycler_Adapater(response.body()!!.data  ,requireContext())
+                    reccyler_view.layoutManager = LinearLayoutManager(context , LinearLayoutManager.VERTICAL , false)
+                    //setting data
+
                 }
             }
 
@@ -56,8 +61,6 @@ private lateinit var pendingBinding: FragmentPendingBinding
 
             }
         })
-        reccyler_view.adapter = Pending_payments_recycler_Adapater(profile_image , profile_name , time)
-        reccyler_view.layoutManager = LinearLayoutManager(context , LinearLayoutManager.VERTICAL , false)
 
 
         return pendingBinding.root

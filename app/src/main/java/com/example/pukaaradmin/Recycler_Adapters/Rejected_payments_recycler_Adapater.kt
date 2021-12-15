@@ -7,9 +7,12 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.pukaaradmin.CommonFunction
 import com.example.pukaaradmin.R
+import com.example.pukaaradmin.Response.UserData_payments
+import com.example.pukaaradmin.Response.UsersData
 
-class Rejected_payments_recycler_Adapater(val context: Context ): RecyclerView.Adapter<Rejected_payments_viewholder>() {
+class Rejected_payments_recycler_Adapater(val paymentdata: ArrayList<UserData_payments>, val context: Context): RecyclerView.Adapter<Rejected_payments_viewholder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Rejected_payments_viewholder {
         val inflater : LayoutInflater = LayoutInflater.from(parent.context)
         val view : View = inflater.inflate(R.layout.user_screen , parent , false)
@@ -17,13 +20,13 @@ class Rejected_payments_recycler_Adapater(val context: Context ): RecyclerView.A
     }
 
     override fun onBindViewHolder(holder: Rejected_payments_viewholder, position: Int) {
-      /* holder.profile_image.setImageResource(profile_image[position])
-        holder.patient_name.text= patient_name[position]
-        holder.time.text = time[position]*/
+    //   holder.profile_image.setImageResource(profile_image[position])
+        holder.patient_name.text= paymentdata[position].user.first_name + "" + paymentdata[position].user.last_name
+        holder.time.text = CommonFunction.dateFormat(paymentdata[position].user.created_at)
     }
 
     override fun getItemCount(): Int {
-       return 0 /* patient_name.size*/
+       return paymentdata.size
     }
 }
 class Rejected_payments_viewholder(itemView: View): RecyclerView.ViewHolder(itemView){
