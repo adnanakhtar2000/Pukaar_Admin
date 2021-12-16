@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.pukaaradmin.ApiClient.ApiClient
 import com.example.pukaaradmin.CommonFunction
 import com.example.pukaaradmin.Response.TherapistListResponse
+import com.example.pukaaradmin.Response.UsersData
 import com.example.pukaaradmin.apiinterface.ApiInterface
 import com.example.pukaaradmin.databinding.FragmentAssignedUserBinding
 import retrofit2.Call
@@ -53,6 +54,9 @@ private lateinit var apiInterface: ApiInterface
                     Toast.LENGTH_LONG).show();
             }
         })
+
+        // setting Data
+
 
 
         return assignedUserBinding.root
