@@ -7,7 +7,9 @@ import android.widget.ImageView
 import android.widget.PopupWindow
 import android.widget.TextView
 import androidx.core.content.ContextCompat.getSystemService
+import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.pukaaradmin.CommonFunction
 import com.example.pukaaradmin.R
 import com.example.pukaaradmin.Response.UserData_payments
@@ -36,6 +38,14 @@ class Pending_payments_recycler_Adapater(val paymentdata: ArrayList<UserData_pay
             dialog.time_date_popup1.text = CommonFunction.dateFormat(paymentdata[position].user.created_at)
             dialog.session_purchased1.text = paymentdata[position].number_of_sessions.toString()
             dialog.session_total_payment.text = paymentdata[position].cost.toString()
+
+
+
+            Glide.with(context)
+                .load(paymentdata[position].picture)
+                .centerCrop()
+                .into(dialog.reciept)
+
             dialog.reject_button.setOnClickListener {
                 dialog.dismiss()
             }
