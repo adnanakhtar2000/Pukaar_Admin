@@ -1,5 +1,6 @@
 package com.example.pukaaradmin.Fragments
 
+import android.content.Context
 import com.example.pukaaradmin.Recycler_Adapters.Re_Assigned_user_recycler_Adapater
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -22,7 +23,8 @@ import retrofit2.Response
 
 
 class Reassigned_user_Fragment : Fragment() {
-   private lateinit var reassignedUserBinding: FragmentReassignedUserBinding
+    private lateinit var mContext: Context
+    private lateinit var reassignedUserBinding: FragmentReassignedUserBinding
     private lateinit var apiInterface: ApiInterface
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,12 +42,17 @@ class Reassigned_user_Fragment : Fragment() {
         therapistResponse.enqueue( object : Callback<TherapistListResponse> {
             override fun onResponse(call: Call<TherapistListResponse>?, response: Response<TherapistListResponse>?) {
 
-                if(response?.body() != null)
-                {
-
+                if(response?.body() != null) {
+                    if (mContext != null)
+                    {
                     val recyclerView = reassignedUserBinding.ReAssignedUserRecycler
-                    recyclerView.adapter = Assigned_user_recycler_Adapater(response.body()!!.users.data , requireContext())
-                    recyclerView.layoutManager = LinearLayoutManager(context , LinearLayoutManager.VERTICAL , false)
+                    recyclerView.adapter = Assigned_user_recycler_Adapater(
+                        response.body()!!.users.data,
+                        mContext
+                    )
+                    recyclerView.layoutManager =
+                        LinearLayoutManager(mContext, LinearLayoutManager.VERTICAL, false)
+                }
                 }
             }
 
@@ -57,6 +64,9 @@ class Reassigned_user_Fragment : Fragment() {
 
         return reassignedUserBinding.root
     }
-
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        mContext = context;
+    }
 
 }

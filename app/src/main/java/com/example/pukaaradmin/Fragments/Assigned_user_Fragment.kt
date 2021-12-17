@@ -1,5 +1,6 @@
 package com.example.pukaaradmin.Fragments
 
+import android.content.Context
 import com.example.pukaaradmin.Recycler_Adapters.Assigned_user_recycler_Adapater
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -21,7 +22,8 @@ import retrofit2.Response
 
 class Assigned_user_Fragment : Fragment() {
 
-private lateinit var assignedUserBinding: FragmentAssignedUserBinding
+    private lateinit var mContext: Context
+    private lateinit var assignedUserBinding: FragmentAssignedUserBinding
 private lateinit var apiInterface: ApiInterface
 
 
@@ -43,9 +45,15 @@ private lateinit var apiInterface: ApiInterface
 
                 if(response?.body() != null)
                 {
+                    if(mContext != null) {
                     val recyclerView = assignedUserBinding.assignedUserRecycler
-                    recyclerView.adapter = Assigned_user_recycler_Adapater(response.body()!!.users.data , requireContext())
-                    recyclerView.layoutManager= LinearLayoutManager(context , LinearLayoutManager.VERTICAL , false)
+                    recyclerView.adapter = Assigned_user_recycler_Adapater(
+                        response.body()!!.users.data,
+                        mContext
+                    )
+                    recyclerView.layoutManager =
+                        LinearLayoutManager(mContext, LinearLayoutManager.VERTICAL, false)
+                }
                 }
             }
 
@@ -62,5 +70,8 @@ private lateinit var apiInterface: ApiInterface
         return assignedUserBinding.root
     }
 
-
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        mContext = context;
+    }
 }
