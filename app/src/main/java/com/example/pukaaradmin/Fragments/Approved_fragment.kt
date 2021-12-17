@@ -47,9 +47,15 @@ class Approved_fragment : Fragment() {
                 response: Response<UserSessionResponse>?
             ) {
                 if (response?.body() != null) {
-                    val recyclerView = approvedFragmentBinding.approvedPaymentRecycler
-                    recyclerView.adapter = Approved_payments_recycler_Adapater(response.body()!!.data  ,requireContext())
-                    recyclerView.layoutManager = LinearLayoutManager(context , LinearLayoutManager.VERTICAL , false)
+                    if(requireContext()!= null) {
+                        val recyclerView = approvedFragmentBinding.approvedPaymentRecycler
+                        recyclerView.adapter = Approved_payments_recycler_Adapater(
+                            response.body()!!.data,
+                            requireContext()
+                        )
+                        recyclerView.layoutManager =
+                            LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+                    }
                     //setting data
                 }
             }

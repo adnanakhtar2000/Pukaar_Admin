@@ -1,6 +1,7 @@
 package com.example.pukaaradmin.Fragments
 
 
+import android.content.Context
 import com.example.pukaaradmin.Recycler_Adapters.Unassigned_user_recycler_Adapater
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -23,6 +24,7 @@ import retrofit2.Response
 
 class UnAssigned_User_fragment : Fragment() {
 
+    private lateinit var mContext: Context
     private lateinit var unAssignedUserFragmentBinding: FragmentUnAssignedUserFragmentBinding
     private lateinit var apiInterface: ApiInterface
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,9 +46,15 @@ class UnAssigned_User_fragment : Fragment() {
 
                 if(response?.body() != null)
                 {
-                    val reccyler_view = unAssignedUserFragmentBinding.unassignedUserRecycler
-                    reccyler_view.adapter = Assigned_user_recycler_Adapater(response.body()!!.users.data , requireContext())
-                    reccyler_view.layoutManager = LinearLayoutManager(context , LinearLayoutManager.VERTICAL , false)
+                    if(context!= null) {
+                        val reccyler_view = unAssignedUserFragmentBinding.unassignedUserRecycler
+                        reccyler_view.adapter = Assigned_user_recycler_Adapater(
+                            response.body()!!.users.data,
+                            context!!
+                        )
+                        reccyler_view.layoutManager =
+                            LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+                    }
                 }
             }
 
@@ -57,6 +65,11 @@ class UnAssigned_User_fragment : Fragment() {
         })
 
         return unAssignedUserFragmentBinding.root
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        mContext = context;
     }
 
 }

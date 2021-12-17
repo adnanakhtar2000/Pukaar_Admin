@@ -35,7 +35,6 @@ class Assigned_user_recycler_Adapater(val data: ArrayList<UsersData> , val conte
             bundle.putParcelable("user data" , data.get(position))
             patientProfile.arguments = bundle
 
-
             val transaction = (context as AppCompatActivity).supportFragmentManager.beginTransaction()
             transaction.replace(R.id.container, patientProfile )
             transaction.disallowAddToBackStack()
