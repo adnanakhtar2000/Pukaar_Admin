@@ -42,7 +42,7 @@ class Pending_payments_recycler_Adapater(val paymentdata: ArrayList<UserData_pay
 
 
             Glide.with(context)
-                .load(paymentdata[position].picture)
+                .load("http://pukar.qareeb.com" + paymentdata[position].picture)
                 .centerCrop()
                 .into(dialog.reciept)
 
