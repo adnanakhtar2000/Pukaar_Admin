@@ -375,66 +375,6 @@ android:paddingRight="10dp"
                 app:layout_constraintRight_toRightOf="parent"
 
                 />
-
-            <TextView
-                android:id="@+id/introduction"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="21dp"
-                android:text="Introduction of Therapist"
-                android:textColor="@color/black"
-                android:textSize="15dp"
-                android:fontFamily="@font/poppins_medium"
-                app:layout_constraintStart_toStartOf="@+id/first_name1"
-                app:layout_constraintTop_toBottomOf="@id/type_doctor1" />
-            <EditText
-                android:id="@+id/introductionEditText"
-                android:layout_width="0dp"
-                android:layout_height="44dp"
-                android:layout_marginTop="6dp"
-                android:layout_marginRight="15dp"
-                android:hint="Please Enter"
-                android:paddingRight="10dp"
-                android:textColorHint="@color/hint_color"
-                android:paddingLeft="20dp"
-                android:inputType="text"
-                android:textColor="@color/black"
-                android:background="@drawable/add_doctor_form"
-                app:layout_constraintTop_toBottomOf="@id/introduction"
-                app:layout_constraintLeft_toLeftOf="@id/first_name"
-                app:layout_constraintRight_toRightOf="parent"
-
-                />
-
-            <TextView
-                android:id="@+id/education"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="21dp"
-                android:text="Education of Therapist"
-                android:textColor="@color/black"
-                android:textSize="15dp"
-                android:fontFamily="@font/poppins_medium"
-                app:layout_constraintStart_toStartOf="@+id/first_name1"
-                app:layout_constraintTop_toBottomOf="@id/introductionEditText" />
-            <EditText
-                android:id="@+id/educationEditText"
-                android:layout_width="0dp"
-                android:layout_height="44dp"
-                android:layout_marginTop="6dp"
-                android:layout_marginRight="15dp"
-                android:hint="Please Enter"
-                android:paddingRight="10dp"
-                android:textColorHint="@color/hint_color"
-                android:paddingLeft="20dp"
-                android:inputType="text"
-                android:textColor="@color/black"
-                android:background="@drawable/add_doctor_form"
-                app:layout_constraintTop_toBottomOf="@id/education"
-                app:layout_constraintLeft_toLeftOf="@id/first_name"
-                app:layout_constraintRight_toRightOf="parent"
-
-                />
             <Button
                 android:id="@+id/add_doctors_button1"
                 android:layout_width="343dp"
@@ -451,7 +391,7 @@ android:paddingRight="10dp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintBottom_toBottomOf="@+id/parent"
-               app:layout_constraintTop_toBottomOf="@id/educationEditText" />
+               app:layout_constraintTop_toBottomOf="@id/type_doctor1" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

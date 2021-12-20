@@ -28,10 +28,10 @@ interface ApiInterface {
                          @Field("service_therapist_provider") provider: String,
                          @Field("therapist_focus") focus: String,
                          @Field("type_of_doctor") doctor: String,
-                         @Field("status_id") status: Int,@Field("introduction") introduction: String,@Field("education") education: String,) : Call<SignUpResponse>
+                         @Field("status_id") status: Int) : Call<SignUpResponse>
     @FormUrlEncoded
     @POST("user")
-    fun getUserTherapistResponse(@Header("Authorization") header: String,@Field("role") role: String,@Field("status") status: String,@Field("type") type: String) : Call<TherapistListResponse>
+    fun getUserTherapistResponse(@Header("Authorization") header: String,@Field("role") role: String,@Field("type") type: String) : Call<TherapistListResponse>
 
     @FormUrlEncoded
     @POST("package")

@@ -27,7 +27,7 @@ class Add_Therapist : AppCompatActivity() {
 
         addTherapistBinding.addDoctorsButton1.setOnClickListener {
 
-            if (namevalidation() && about_validaiton() && mobile_number_validation() && passwordValidation() && email_validation() && cityvalidation() && servicevalidation() && therapist_focus() && type_of_doctor()&& validationIntroEducation()){
+            if (namevalidation() && about_validaiton() && mobile_number_validation() && passwordValidation() && email_validation() && cityvalidation() && servicevalidation() && therapist_focus() && type_of_doctor()){
 
                 /*val intent = Intent(this , Added_Therapist::class.java)
                 startActivity(intent)
@@ -40,7 +40,7 @@ class Add_Therapist : AppCompatActivity() {
                     2
 
                 val signUpResponse = apiInterface.getRegisterResponse(addTherapistBinding.firstName1.text.toString(),addTherapistBinding.lastNameEditTet.text.toString(),
-                    addTherapistBinding.email1.text.toString(),addTherapistBinding.mobileNumber1.text.toString(),addTherapistBinding.passwordEditText.text.toString(),addTherapistBinding.passwordEditText.text.toString(),"therapist",addTherapistBinding.about1.text.toString(),addTherapistBinding.city1.text.toString(),addTherapistBinding.service1.text.toString(),addTherapistBinding.therapist1.text.toString(),addTherapistBinding.typeDoctor1.text.toString(),statusValue,addTherapistBinding.introductionEditText.text.toString(),addTherapistBinding.educationEditText.text.toString())
+                    addTherapistBinding.email1.text.toString(),addTherapistBinding.mobileNumber1.text.toString(),addTherapistBinding.passwordEditText.text.toString(),addTherapistBinding.passwordEditText.text.toString(),"therapist",addTherapistBinding.about1.text.toString(),addTherapistBinding.city1.text.toString(),addTherapistBinding.service1.text.toString(),addTherapistBinding.therapist1.text.toString(),addTherapistBinding.typeDoctor1.text.toString(),statusValue)
                 signUpResponse.enqueue( object : Callback<SignUpResponse> {
                     override fun onResponse(call: Call<SignUpResponse>?, response: Response<SignUpResponse>?) {
 
@@ -184,22 +184,6 @@ class Add_Therapist : AppCompatActivity() {
 
         if (typeOf_therapist.isEmpty()){
             addTherapistBinding.typeDoctor1.setError("Please Enter Type of Doctor")
-            return false
-        }
-        else{
-            return true
-        }}
-
-    private fun validationIntroEducation() : Boolean {
-        val intro = addTherapistBinding.introductionEditText.text.toString().trim()
-        val edu = addTherapistBinding.educationEditText.text.toString().trim()
-
-        if (intro.isEmpty()){
-            addTherapistBinding.introductionEditText.setError("Please Enter Introduction")
-            return false
-        }
-        if (edu.isEmpty()){
-            addTherapistBinding.educationEditText.setError("Please Enter Education")
             return false
         }
         else{

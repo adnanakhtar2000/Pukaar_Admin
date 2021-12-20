@@ -40,13 +40,13 @@ class Availble_Therapist : Fragment() {
 
         //tab layout setting
         apiInterface = ApiClient.create()
-        val therapistResponse = apiInterface.getUserTherapistResponse(CommonFunction.getToken(requireContext()),"therapist","active","assigned")
+        val therapistResponse = apiInterface.getUserTherapistResponse(CommonFunction.getToken(requireContext()),"therapist","assigned")
         therapistResponse.enqueue( object : Callback<TherapistListResponse> {
             override fun onResponse(call: Call<TherapistListResponse>?, response: Response<TherapistListResponse>?) {
 
-                if(response?.body() != null && response.body()!!.users.data != null)
+                if(response?.body() != null)
                 {
-                        val recyclerView = availbleTherapistBinding.availbleTherapistRecyclerView
+                    val recyclerView = availbleTherapistBinding.availbleTherapistRecyclerView
                     recyclerView.adapter = Availble_Therapist_recycler_Adapater(response.body()!!.users.data  ,requireContext())
                     recyclerView.layoutManager = LinearLayoutManager(context , LinearLayoutManager.VERTICAL , false)
                     //setting data
