@@ -40,13 +40,13 @@ class UnAssigned_User_fragment : Fragment() {
         unAssignedUserFragmentBinding = FragmentUnAssignedUserFragmentBinding.inflate(inflater , container , false)
 
         apiInterface = ApiClient.create()
-        val unassignedUser = apiInterface.getUserTherapistResponse(CommonFunction.getToken(requireContext()),"client","unassigned")
+        val unassignedUser = apiInterface.getUserTherapistResponse(CommonFunction.getToken(requireContext()),"client","active","unassigned")
         unassignedUser.enqueue( object : Callback<TherapistListResponse> {
             override fun onResponse(call: Call<TherapistListResponse>?, response: Response<TherapistListResponse>?) {
 
                 if(response?.body() != null)
                 {
-                    if(mContext!= null) {
+                    if(mContext!= null && response.body()!!.users.data != null) {
                         val reccyler_view = unAssignedUserFragmentBinding.unassignedUserRecycler
                         reccyler_view.adapter = Assigned_user_recycler_Adapater(
                             response.body()!!.users.data,

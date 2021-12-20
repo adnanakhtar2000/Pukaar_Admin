@@ -39,13 +39,14 @@ private lateinit var apiInterface: ApiInterface
        assignedUserBinding = FragmentAssignedUserBinding.inflate(inflater , container , false)
 
         apiInterface = ApiClient.create()
-        val assignedUser = apiInterface.getUserTherapistResponse(CommonFunction.getToken(requireContext()),"client","assigned")
+        val assignedUser = apiInterface.getUserTherapistResponse(CommonFunction.getToken(requireContext()),"client","active","assigned")
         assignedUser.enqueue( object : Callback<TherapistListResponse> {
             override fun onResponse(call: Call<TherapistListResponse>?, response: Response<TherapistListResponse>?) {
 
                 if(response?.body() != null)
                 {
-                    if(mContext != null) {
+                    if(mContext != null && response.body()!!.users.data != null) {
+
                     val recyclerView = assignedUserBinding.assignedUserRecycler
                     recyclerView.adapter = Assigned_user_recycler_Adapater(
                         response.body()!!.users.data,
@@ -58,8 +59,7 @@ private lateinit var apiInterface: ApiInterface
             }
 
             override fun onFailure(call: Call<TherapistListResponse>?, t: Throwable?) {
-                Toast.makeText(requireContext(),"Error...",
-                    Toast.LENGTH_LONG).show();
+                Toast.makeText(requireContext(),"Error...", Toast.LENGTH_LONG).show();
             }
         })
 

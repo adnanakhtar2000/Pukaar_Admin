@@ -38,12 +38,12 @@ class Reassigned_user_Fragment : Fragment() {
         // Inflate the layout for this fragment
         reassignedUserBinding = FragmentReassignedUserBinding.inflate(inflater , container , false)
         apiInterface = ApiClient.create()
-        val therapistResponse = apiInterface.getUserTherapistResponse(CommonFunction.getToken(requireContext()),"client","reassigned")
+        val therapistResponse = apiInterface.getUserTherapistResponse(CommonFunction.getToken(requireContext()),"client","active","reassigned")
         therapistResponse.enqueue( object : Callback<TherapistListResponse> {
             override fun onResponse(call: Call<TherapistListResponse>?, response: Response<TherapistListResponse>?) {
 
                 if(response?.body() != null) {
-                    if (mContext != null)
+                    if (mContext != null && response.body()!!.users.data != null)
                     {
                     val recyclerView = reassignedUserBinding.ReAssignedUserRecycler
                     recyclerView.adapter = Assigned_user_recycler_Adapater(
