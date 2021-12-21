@@ -43,4 +43,8 @@ interface ApiInterface {
     @FormUrlEncoded
     @POST("admin/session")
     fun getUserSessionDetails(@Header("Authorization") header: String,@Field("status") name: String) : Call<UserSessionResponse>
+
+    @FormUrlEncoded
+    @POST("admin/session/update")
+    fun getUserSessionUpdate(@Header("Authorization") header: String,@Field("status") status: String ,@Field("session_id") session_id: String) : Call<String>
 }
