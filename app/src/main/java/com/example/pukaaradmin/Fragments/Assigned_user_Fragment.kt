@@ -51,6 +51,7 @@ private lateinit var apiInterface: ApiInterface
                     recyclerView.adapter = Assigned_user_recycler_Adapater(
                         response.body()!!.users.data,
                         mContext
+
                     )
                     recyclerView.layoutManager =
                         LinearLayoutManager(mContext, LinearLayoutManager.VERTICAL, false)
