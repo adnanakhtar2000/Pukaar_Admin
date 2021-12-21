@@ -53,6 +53,7 @@ private lateinit var apiInterface: ApiInterface
                         mContext
 
                     )
+
                     recyclerView.layoutManager =
                         LinearLayoutManager(mContext, LinearLayoutManager.VERTICAL, false)
                 }
