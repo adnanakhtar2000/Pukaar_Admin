@@ -54,7 +54,7 @@ class Therapist_Profile : Fragment() {
       therapistProfileBinding.button1.setOnClickListener {
             var connectedUser = Connected_User()
           val bundle = Bundle()
-          bundle.putParcelable("connected user" , data.id.toString())
+
             fragmentManager?.beginTransaction()?.replace(R.id.container , connectedUser)?.commit()
         }
 

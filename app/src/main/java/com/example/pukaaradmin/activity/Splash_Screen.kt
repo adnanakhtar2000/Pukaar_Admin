@@ -39,26 +39,6 @@ class Splash_Screen : AppCompatActivity() {
             }
         }, 2000)
 
-        apiInterface = ApiClient.create()
-        val call = apiInterface.getConnectedUserResponse(CommonFunction.getToken(applicationContext),"2")
-        call.enqueue(object : Callback<ConnectUserResponse> {
-            override fun onResponse(
-                call: Call<ConnectUserResponse>?,
-                response: Response<ConnectUserResponse>?
-            ) {
-                if (response?.body() != null) {
-                    if(applicationContext!= null) {
-                       // response.body()!!.user.therapist_profile.client       // pass this list to adapter
-                       // response.body()!!.user.therapist_profile.client.get(position).user.first_name   // pass in adapter class for showing data
-
-                    }
-                    //setting data
-                }
-            }
-
-            override fun onFailure(call: Call<ConnectUserResponse>?, t: Throwable?) {
-
-            }
-        })
+       
     }
 }

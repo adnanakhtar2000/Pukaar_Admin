@@ -46,7 +46,7 @@ class Availble_Therapist_recycler_Adapater(val data: ArrayList<UsersData>  ,val 
             bundle.putParcelable("data object" , data.get(position))
             therapist_Profile.arguments = bundle
 
-            bundle.putParcelable("connected user" , data.get(position).therapist_profile.id)
+
 
 
             val transaction = (context as AppCompatActivity).supportFragmentManager.beginTransaction()
