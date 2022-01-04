@@ -1,14 +1,8 @@
 package com.example.pukaaradmin.apiinterface
 
-import com.example.pukaaradmin.Response.LoginResponse
-import com.example.pukaaradmin.Response.SignUpResponse
-import com.example.pukaaradmin.Response.TherapistListResponse
-import com.example.pukaaradmin.Response.UserSessionResponse
+import com.example.pukaaradmin.Response.*
 import retrofit2.Call
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
-import retrofit2.http.Header
-import retrofit2.http.POST
+import retrofit2.http.*
 
 interface ApiInterface {
     @FormUrlEncoded
@@ -47,4 +41,8 @@ interface ApiInterface {
     @FormUrlEncoded
     @POST("admin/session/update")
     fun getUserSessionUpdate(@Header("Authorization") header: String,@Field("status") status: String ,@Field("session_id") session_id: String) : Call<String>
+
+    @GET("users/{id}/edit")
+    fun getConnectedUserResponse(@Header("Authorization") header: String,@Path("id") id: String) : Call<ConnectUserResponse>
+
 }
