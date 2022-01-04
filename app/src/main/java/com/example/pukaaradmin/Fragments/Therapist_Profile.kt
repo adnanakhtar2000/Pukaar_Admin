@@ -13,6 +13,7 @@ import com.example.pukaaradmin.Response.TherapistProfile
 import com.example.pukaaradmin.Response.UsersData
 import com.example.pukaaradmin.apiinterface.ApiInterface
 import kotlinx.android.synthetic.main.activity_add_therapist.*
+import kotlinx.android.synthetic.main.fragment_therapist__profile.*
 
 
 class Therapist_Profile : Fragment() {
@@ -20,6 +21,7 @@ class Therapist_Profile : Fragment() {
     private lateinit var usersData: UsersData
     private lateinit var therapistProfileBinding: com.example.pukaaradmin.databinding.FragmentTherapistProfileBinding
   private  lateinit var apiInterface: ApiInterface
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,6 +48,15 @@ class Therapist_Profile : Fragment() {
         therapistProfileBinding.doctorName.text = data.first_name + " " + data.last_name
         therapistProfileBinding.docType.text = data?.therapist_profile?.type_of_doctor
         therapistProfileBinding.docAbout.text = data?.therapist_profile?.about
+        therapistProfileBinding.introduction.text = data?.therapist_profile?.introduction
+        therapistProfileBinding.docEducation.text = data?.therapist_profile?.education
+
+      therapistProfileBinding.button1.setOnClickListener {
+            var connectedUser = Connected_User()
+          val bundle = Bundle()
+          bundle.putParcelable("connected user" , data.id.toString())
+            fragmentManager?.beginTransaction()?.replace(R.id.container , connectedUser)?.commit()
+        }
 
         return therapistProfileBinding.root
 

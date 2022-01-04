@@ -17,7 +17,7 @@ var created_at: String,var updated_at: String,var user_status: UserStatus,var th
 @Parcelize
 data class UserStatus(var id: Int, var name: String): Parcelable
 @Parcelize
-data class TherapistProfile(var id: Int, var about: String, var city: String, var service_therapist_provider: String, var therapist_focus: String, var type_of_doctor: String) : Parcelable
+data class TherapistProfile(var id: Int, var about: String, var city: String, var service_therapist_provider: String, var therapist_focus: String, var type_of_doctor: String , var introduction: String , var education: String) : Parcelable
 @Parcelize
 data class ClientProfile(var id: Int , var  orientation : String , var religion : String , var religion_identifier : String , var medicines : String , var sleeping_habit : String , var problem : String) : Parcelable
 
