@@ -33,6 +33,7 @@ class Assigned_user_recycler_Adapater(val data: ArrayList<UsersData> , val conte
 
           val bundle = Bundle()
             bundle.putParcelable("user data" , data.get(position))
+            bundle.putString("id" ,data.get(position).id.toString())
             patientProfile.arguments = bundle
 
             val transaction = (context as AppCompatActivity).supportFragmentManager.beginTransaction()
