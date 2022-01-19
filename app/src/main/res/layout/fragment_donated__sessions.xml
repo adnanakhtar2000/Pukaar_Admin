@@ -33,59 +33,50 @@
         app:layout_constraintTop_toBottomOf="@id/donated_sessions"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"/>
+
     <TextView
+        android:id="@+id/textView17"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Doctor"
-        android:textColor="@color/black"
-        android:textSize="14dp"
         android:layout_marginLeft="13dp"
         android:layout_marginRight="313dp"
         android:fontFamily="@font/poppins_medium"
-        app:layout_constraintTop_toTopOf="@+id/ss_view"
+        android:text="Doctor"
+        android:textColor="@color/black"
+        android:textSize="14dp"
         app:layout_constraintBottom_toBottomOf="@id/ss_view"
         app:layout_constraintLeft_toLeftOf="@id/ss_view"
-        app:layout_constraintRight_toRightOf="@id/ss_view"/>
+        app:layout_constraintRight_toRightOf="@id/ss_view"
+        app:layout_constraintTop_toTopOf="@+id/ss_view" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Date"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Date &amp; Time "
         android:textColor="@color/black"
         android:textSize="14dp"
-        android:layout_marginLeft="107dp"
-        android:layout_marginRight="234dp"
-        android:fontFamily="@font/poppins_medium"
-        app:layout_constraintTop_toTopOf="@+id/ss_view"
         app:layout_constraintBottom_toBottomOf="@id/ss_view"
+        app:layout_constraintEnd_toStartOf="@+id/textView16"
         app:layout_constraintLeft_toLeftOf="@id/ss_view"
-        app:layout_constraintRight_toRightOf="@id/ss_view"/>
+        app:layout_constraintRight_toRightOf="@id/ss_view"
+        app:layout_constraintStart_toEndOf="@+id/textView17"
+        app:layout_constraintTop_toTopOf="@+id/ss_view" />
+
     <TextView
+        android:id="@+id/textView16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Time"
-        android:textColor="@color/black"
-        android:textSize="14dp"
-        android:layout_marginLeft="201dp"
-        android:layout_marginRight="139dp"
-        android:fontFamily="@font/poppins_medium"
-        app:layout_constraintTop_toTopOf="@+id/ss_view"
-        app:layout_constraintBottom_toBottomOf="@id/ss_view"
-        app:layout_constraintLeft_toLeftOf="@id/ss_view"
-        app:layout_constraintRight_toRightOf="@id/ss_view"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Session Taken"
-        android:textColor="@color/black"
-        android:textSize="14dp"
         android:layout_marginLeft="267dp"
         android:layout_marginRight="7dp"
         android:fontFamily="@font/poppins_medium"
-        app:layout_constraintTop_toTopOf="@+id/ss_view"
+        android:text="Session Taken"
+        android:textColor="@color/black"
+        android:textSize="14dp"
         app:layout_constraintBottom_toBottomOf="@id/ss_view"
         app:layout_constraintLeft_toLeftOf="@id/ss_view"
-        app:layout_constraintRight_toRightOf="@id/ss_view"/>
+        app:layout_constraintRight_toRightOf="@id/ss_view"
+        app:layout_constraintTop_toTopOf="@+id/ss_view" />
 
 
     <androidx.recyclerview.widget.RecyclerView

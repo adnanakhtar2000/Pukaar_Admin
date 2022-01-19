@@ -39,8 +39,10 @@ class Connected_User : Fragment() {
         connectedUserBinding = FragmentConnectedUserBinding.inflate(inflater , container , false)
         apiInterface = ApiClient.create()
 
+        val bundle : String? = requireArguments().getString("dataobject1")
 
-        val call = apiInterface.getConnectedUserResponse(CommonFunction.getToken(requireContext()),"2")
+       /* val data: Therapist_Profile = arguments?.getParcelable<Therapist_Profile>("dataobject1") as Therapist_Profile*/
+        val call = apiInterface.getConnectedUserResponse(CommonFunction.getToken(requireContext()),bundle.toString())
         call.enqueue(object : Callback<ConnectUserResponse> {
             override fun onResponse(
                 call: Call<ConnectUserResponse>?,

@@ -40,7 +40,7 @@ class Therapist_Profile : Fragment() {
         therapistProfileBinding = com.example.pukaaradmin.databinding.FragmentTherapistProfileBinding.inflate(inflater , container , false)
         // Inflate the layout for this fragment
         val bundle : Bundle? = arguments
-        val data: UsersData = arguments?.getParcelable<UsersData>("data object") as UsersData
+        val data: UsersData = arguments?.getParcelable<UsersData>("dataobject") as UsersData
 
         /*val data1: TherapistProfile = arguments?.getParcelable<TherapistProfile>("data1 object") as TherapistProfile*/
 
@@ -53,9 +53,15 @@ class Therapist_Profile : Fragment() {
 
       therapistProfileBinding.button1.setOnClickListener {
             var connectedUser = Connected_User()
-          val bundle = Bundle()
 
-            fragmentManager?.beginTransaction()?.replace(R.id.container , connectedUser)?.commit()
+
+
+
+
+          val bundle = Bundle()
+          bundle.putString("dataobject1" , data.id.toString())
+          connectedUser.arguments = bundle
+          fragmentManager?.beginTransaction()?.replace(R.id.container , connectedUser)?.commit()
         }
 
         return therapistProfileBinding.root

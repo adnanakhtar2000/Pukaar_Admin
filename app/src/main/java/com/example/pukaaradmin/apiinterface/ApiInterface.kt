@@ -37,12 +37,14 @@ interface ApiInterface {
     @FormUrlEncoded
     @POST("admin/session")
     fun getUserSessionDetails(@Header("Authorization") header: String,@Field("status") name: String) : Call<UserSessionResponse>
+    @FormUrlEncoded
+    @POST("admin/session")
+    fun getUserDonationSessionDetails(@Header("Authorization") header: String,@Field("status") name: String , @Field("donation") donation: String) : Call<UserSessionResponse>
+
 
     @FormUrlEncoded
     @POST("admin/session/update")
     fun getUserSessionUpdate(@Header("Authorization") header: String,@Field("status") status: String ,@Field("session_id") session_id: String) : Call<String>
-
-    @GET("users/{id}/edit")
-    fun getConnectedUserResponse(@Header("Authorization") header: String,@Path("id") id: String) : Call<ConnectUserResponse>
-
-}
+@GET("users/{id}/edit")
+    fun getConnectedUserResponse(@Header("Authorization") header:String,@Field("id") id: String) : Call<ConnectUserResponse>
+    }

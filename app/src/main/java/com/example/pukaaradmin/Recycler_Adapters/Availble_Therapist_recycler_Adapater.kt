@@ -43,7 +43,7 @@ class Availble_Therapist_recycler_Adapater(val data: ArrayList<UsersData>  ,val 
             var therapist_Profile = Therapist_Profile()
 
             val bundle = Bundle()
-            bundle.putParcelable("data object" , data.get(position))
+            bundle.putParcelable("dataobject" , data.get(position))
             therapist_Profile.arguments = bundle
 
 
