@@ -83,6 +83,8 @@ dashboardBinding.bottomNavigation1.setOnNavigationItemSelectedListener{
                     val intent = Intent(applicationContext , Speacial_Offer_create::class.java)
                     startActivity(intent)
 
+
+
                 }
                 R.id.left_bank_detail ->{
                     val intent = Intent(applicationContext , Add_Bank_Detail::class.java)
