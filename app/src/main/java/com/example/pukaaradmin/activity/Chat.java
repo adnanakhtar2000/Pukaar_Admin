@@ -16,15 +16,16 @@ import com.example.pukaaradmin.ApiClient.ApiClient;
 import com.example.pukaaradmin.CommonFunction;
 import com.example.pukaaradmin.R;
 import com.example.pukaaradmin.Response.MessageResponse;
+import com.example.pukaaradmin.Response.Save_message;
 import com.example.pukaaradmin.apiinterface.ApiInterface;
 import com.google.gson.Gson;
 
-import java.net.URISyntaxException;
+/*import java.net.Socket;
+import java.net.URISyntaxException;*/
 import java.util.ArrayList;
+import  java.net.Socket;
+import  java.net.URISyntaxException;
 
-import io.socket.client.IO;
-import io.socket.client.Socket;
-import io.socket.emitter.Emitter;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -35,9 +36,11 @@ public class Chat extends AppCompatActivity {
     private TextView send;
     private ApiInterface apiInterface;
     ArrayList<MessageResponse.FirstDatum> messageList = new ArrayList<>();
+    ArrayList<Save_message> save_messages = new ArrayList<>();
     private Socket mSocket;
-    private MessageListAdapter mMessageAdapter;
+    private MessageListAdapter mMessageAdapter , mMessageAdapter1  ;
     private RecyclerView mMessageRecycler;
+
     private String id = "3";
     public void setId(String id)
     {
@@ -94,6 +97,7 @@ public class Chat extends AppCompatActivity {
         send = findViewById(R.id.send_comment);
         mMessageRecycler = findViewById(R.id.chat_recycler);
         apiInterface = ApiClient.Companion.create();
+       mMessageAdapter1 = new MessageListAdapter(this , save_messages)
         mMessageAdapter = new MessageListAdapter(this, messageList);
         mMessageRecycler.setLayoutManager(new LinearLayoutManager(this));
         mMessageRecycler.setAdapter(mMessageAdapter);
