@@ -1,5 +1,6 @@
 package com.example.pukaaradmin.apiinterface
 
+import com.example.pukaaradmin.ModelClasses.GetMessage
 import com.example.pukaaradmin.Response.*
 import retrofit2.Call
 import retrofit2.http.*
@@ -100,8 +101,8 @@ interface ApiInterface {
     @FormUrlEncoded
     @POST("get-message")
     fun getmessage(
-        @Header("Authorization") authorization: String?, @Field("reciever_id") receiverId: String?,
-    ): Call<String>?
+        @Header("Authorization") authorization: String?, @Field("reciever_id") receiverId: Int?
+    ): Call<GetMessage>?
 
 }
 

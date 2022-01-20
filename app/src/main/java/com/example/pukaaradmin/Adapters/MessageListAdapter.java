@@ -12,9 +12,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 
 import com.example.pukaaradmin.CommonFunction;
+import com.example.pukaaradmin.ModelClasses.Message;
+import com.example.pukaaradmin.ModelClasses.Messages;
 import com.example.pukaaradmin.R;
+import com.example.pukaaradmin.Response.FirstDatum;
 import com.example.pukaaradmin.Response.MessageResponse;
+import com.example.pukaaradmin.activity.Chat;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MessageListAdapter extends RecyclerView.Adapter {
@@ -22,11 +27,17 @@ public class MessageListAdapter extends RecyclerView.Adapter {
     private static final int VIEW_TYPE_MESSAGE_RECEIVED = 2;
 
     private Context mContext;
-    private List<MessageResponse.FirstDatum> mMessageList;
+    private List<FirstDatum> mMessageList;
+    private List<Message> mMessages;
 
-    public MessageListAdapter(Context context, List<MessageResponse.FirstDatum> messageList) {
+    public MessageListAdapter(Context context, List<FirstDatum> messageList) {
         mContext = context;
         mMessageList = messageList;
+    }
+
+    public MessageListAdapter(Chat context, List<Message> save_messages) {
+        mContext = context;
+        mMessages = save_messages;
     }
 
     @Override
@@ -37,7 +48,7 @@ public class MessageListAdapter extends RecyclerView.Adapter {
     // Determines the appropriate ViewType according to the sender of the message.
     @Override
     public int getItemViewType(int position) {
-        MessageResponse.FirstDatum message = (MessageResponse.FirstDatum) mMessageList.get(position);
+        FirstDatum message = (FirstDatum) mMessageList.get(position);
         String id = message.getSenderId()+"";
         if (id.equals(CommonFunction.Companion.getUserId(mContext))) {
             // If the current user is the sender of the message
@@ -69,7 +80,7 @@ public class MessageListAdapter extends RecyclerView.Adapter {
     // Passes the message object to a ViewHolder so that the contents can be bound to UI.
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-        MessageResponse.FirstDatum message = (MessageResponse.FirstDatum) mMessageList.get(position);
+      FirstDatum message = (FirstDatum) mMessageList.get(position);
 
         switch (holder.getItemViewType()) {
             case VIEW_TYPE_MESSAGE_SENT:
@@ -90,12 +101,12 @@ public class MessageListAdapter extends RecyclerView.Adapter {
             dateText = (TextView) itemView.findViewById(R.id.text_gchat_date_me);
         }
 
-        void bind(MessageResponse.FirstDatum message) {
+        void bind(FirstDatum message) {
             messageText.setText(message.getContent());
 
             // Format the stored timestamp into a readable String using method.
-            timeText.setText(CommonFunction.Companion.changeDateFormat(message.getCreated_at(),true));
-            dateText.setText(CommonFunction.Companion.changeDateFormat(message.getCreated_at(),false));
+            timeText.setText(CommonFunction.Companion.convertUTCtoLocal(message.getCreated_at()));
+            dateText.setText(CommonFunction.Companion.convertUTCtoLocal(message.getCreated_at()));
         }
     }
 
@@ -113,13 +124,13 @@ public class MessageListAdapter extends RecyclerView.Adapter {
 
         }
 
-        void bind(MessageResponse.FirstDatum message) {
+        void bind(FirstDatum message) {
             messageText.setText(message.getSenderName());
 
             // Format the stored timestamp into a readable String using method.
-            timeText.setText(CommonFunction.Companion.changeDateFormat(message.getCreated_at(),true));
+            timeText.setText(CommonFunction.Companion.convertUTCtoLocal(message.getCreated_at()));
             nameText.setText(message.getContent());
-            dateText.setText(CommonFunction.Companion.changeDateFormat(message.getCreated_at(),false));
+            dateText.setText(CommonFunction.Companion.convertUTCtoLocal(message.getCreated_at()));
 
 
             // Insert the profile image from the URL into the ImageView.

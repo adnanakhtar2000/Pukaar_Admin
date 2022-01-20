@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import com.example.pukaaradmin.R
 import com.example.pukaaradmin.Response.UsersData
 import com.example.pukaaradmin.activity.Chat
@@ -49,6 +50,14 @@ class Patient_Profile : Fragment() {
             val intent = Intent(requireActivity(), chat::class.java)
             //intent.putExtra("id",id)
             startActivity(intent)
+        }
+
+        patientProfileBinding.assignTheropist.setOnClickListener {
+            var therapist = Availble_Therapist()
+            val transaction = (context as AppCompatActivity).supportFragmentManager.beginTransaction()
+            transaction.replace(R.id.container, therapist )
+            transaction.disallowAddToBackStack()
+            transaction.commit()
         }
 
         return patientProfileBinding.root

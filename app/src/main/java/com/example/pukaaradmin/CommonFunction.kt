@@ -2,6 +2,8 @@ package com.example.pukaaradmin
 
 import android.content.Context
 import android.content.SharedPreferences
+import android.util.Log
+import java.lang.Exception
 import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.util.*
@@ -60,7 +62,7 @@ class CommonFunction {
             return formatter.format(parser.parse(dateTime))
         }
         fun changeDateFormat(date: String?, isTime: Boolean): String? {
-            val curFormat = SimpleDateFormat("yyyy-mm-dd'T'hh:mm:ss")
+            val curFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")
             var dateObj: Date? = null
             try {
                 dateObj = curFormat.parse(date)
@@ -73,5 +75,23 @@ class CommonFunction {
             }
             return ""
         }
+
+
+        fun convertUTCtoLocal(ourDate: String?): String? {
+            var ourDate = ourDate
+            try {
+                val formatter = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")
+                formatter.timeZone = TimeZone.getTimeZone("UTC")
+                val value = formatter.parse(ourDate)
+                val dateFormatter = SimpleDateFormat("EEE, dd MMM, yyyy") //this format changeable
+                dateFormatter.timeZone = TimeZone.getDefault()
+                ourDate = dateFormatter.format(value)
+                Log.d("ourDate", ourDate)
+            } catch (e: Exception) {
+                ourDate = ourDate
+            }
+            return ourDate
+        }
+
     }
 }
