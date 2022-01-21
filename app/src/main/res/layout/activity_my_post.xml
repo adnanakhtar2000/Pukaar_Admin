@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".activity.My_Post">
+    <Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:elevation="10dp"
+        android:background="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0"
+        tools:ignore="NewApi" />
+
+    <ImageView
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginRight="23dp"
+        android:layout_marginBottom="23dp"
+        android:elevation="10dp"
+        android:src="@drawable/ic_baseline_notifications_none_24"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/toolbar"
+        app:tint="@color/black"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="10dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="My Post"
+        android:textColor="@color/Main_color"
+        android:textSize="22dp"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/toolbar" />
+
+    <ImageView
+        android:id="@+id/back_arrow_post"
+        android:layout_width="40dp"
+        android:layout_height="24dp"
+        android:layout_marginLeft="23dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginBottom="23dp"
+        android:elevation="10dp"
+
+        android:src="@drawable/ic_baseline_arrow_back_24"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/toolbar"
+        app:tint="#004481"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/post_pic"
+        android:layout_width="match_parent"
+        android:layout_height="322dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/ic_group_48"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/post_button" />
+
+    <EditText
+        android:id="@+id/post_text"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/postform"
+        android:gravity="top"
+        android:hint="Enter Caption Here"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/hint_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/post_pic" />
+
+    <Button
+        android:id="@+id/post_button1"
+        android:layout_width="343dp"
+        android:layout_height="44dp"
+        android:background="@drawable/login_button"
+        android:fontFamily="@font/poppins"
+        android:text="Post"
+        android:layout_marginBottom="20dp"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <Button
+        android:id="@+id/post_button"
+        android:layout_width="wrap_content"
+        android:layout_height="44dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/login_button"
+        android:fontFamily="@font/poppins"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="Select Iamge"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_goneMarginTop="10dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

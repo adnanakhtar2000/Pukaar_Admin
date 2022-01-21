@@ -1,5 +1,6 @@
 package com.example.pukaaradmin.Fragments
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import com.example.pukaaradmin.CommonFunction
 import com.example.pukaaradmin.R
+import com.example.pukaaradmin.activity.Pukaar_Forum
 import com.example.pukaaradmin.databinding.FragmentDashboardBinding
 
 
@@ -45,6 +47,11 @@ private lateinit var userFragment: User_Fragment
         dashboardBinding.cardView5.setOnClickListener{
             val sessionSummary= Session_Summary()
             fragmentManager?.beginTransaction()?.replace(R.id.container , sessionSummary)?.commit()
+        }
+        dashboardBinding.cardView6.setOnClickListener{
+           val intent = Intent(requireContext() , Pukaar_Forum::class.java)
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            startActivity(intent)
         }
         dashboardBinding.name.text = CommonFunction.getName(requireContext())
         return dashboardBinding.root

@@ -8,7 +8,7 @@ import android.widget.PopupWindow
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.ContextCompat.getSystemService
-import androidx.databinding.BindingAdapter
+
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.pukaaradmin.ApiClient.ApiClient

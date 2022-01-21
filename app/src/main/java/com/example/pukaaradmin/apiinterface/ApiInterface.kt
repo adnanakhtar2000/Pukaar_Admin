@@ -2,6 +2,7 @@ package com.example.pukaaradmin.apiinterface
 
 import com.example.pukaaradmin.ModelClasses.GetMessage
 import com.example.pukaaradmin.Response.*
+import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -12,6 +13,16 @@ interface ApiInterface {
         @Field("email") email: String,
         @Field("password") password: String
     ): Call<LoginResponse>
+
+    @FormUrlEncoded
+    @POST("comment")
+    fun createComment(
+        @Header("Authorization") authorization: String?,
+        @Field("comment") comment: String?,
+        @Field("post_id") postId: Int
+    ): Call<String?>?
+
+
 
     @FormUrlEncoded
     @POST("register")
@@ -40,6 +51,14 @@ interface ApiInterface {
         @Field("role") role: String,
         @Field("status") status: String,
         @Field("type") type: String
+    ): Call<TherapistListResponse>
+    @FormUrlEncoded
+    @POST("user")
+    fun getUserunavailbleTherapistResponse(
+        @Header("Authorization") header: String,
+        @Field("role") role: String,
+        @Field("status") status: String,
+
     ): Call<TherapistListResponse>
 
     @FormUrlEncoded
@@ -103,6 +122,17 @@ interface ApiInterface {
     fun getmessage(
         @Header("Authorization") authorization: String?, @Field("reciever_id") receiverId: Int?
     ): Call<GetMessage>?
+
+    @GET("forum")
+    fun getForumList(@Header("Authorization") authorization: String?): Call<ForumResponse?>?
+
+    @Multipart
+    @POST("post")
+    fun createPost(
+        @Header("Authorization") authorization: String?,
+        @Part("content") content: RequestBody?,
+        @Part("picture\"; filename=\"pp.png") file: RequestBody?
+    ): Call<String?>?
 
 }
 

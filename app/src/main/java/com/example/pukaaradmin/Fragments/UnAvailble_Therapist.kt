@@ -56,7 +56,7 @@ class UnAvailble_Therapist : Fragment() {
         //return inflater.inflate(R.layout.fragment_un_availble__therapist, container, false)
         unAvailbleTherapistBinding = FragmentUnAvailbleTherapistBinding.inflate(inflater , container , false)
         apiInterface = ApiClient.create()
-        val therapistResponse = apiInterface.getUserTherapistResponse(CommonFunction.getToken(requireContext()),"therapist","inactive","unassigned")
+        val therapistResponse = apiInterface.getUserunavailbleTherapistResponse(CommonFunction.getToken(requireContext()),"therapist","inactive")
         therapistResponse.enqueue( object : Callback<TherapistListResponse> {
             override fun onResponse(call: Call<TherapistListResponse>?, response: Response<TherapistListResponse>?) {
 
@@ -64,12 +64,8 @@ class UnAvailble_Therapist : Fragment() {
                 {
                     if(response.body()!!.users.data != null) {
                         val recyclerView = unAvailbleTherapistBinding.availbleTherapistRecyclerView
-                        recyclerView.adapter = Availble_Therapist_recycler_Adapater(
-                            response.body()!!.users.data,
-                            requireContext()
-                        )
-                        recyclerView.layoutManager =
-                            LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+                        recyclerView.adapter = Availble_Therapist_recycler_Adapater(response.body()!!.users.data, requireContext())
+                        recyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
                     }
                 }
             }

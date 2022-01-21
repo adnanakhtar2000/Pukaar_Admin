@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    tools:context=".activity.Pukaar_Forum"
+    >
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/forum_profile"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginTop="25dp"
+        android:src="@drawable/profile_image"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/forum_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:textSize="16dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Anna-Marie LeBeau"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@+id/forum_profile"
+        app:layout_constraintTop_toTopOf="@+id/forum_profile" />
+
+    <TextView
+        android:id="@+id/forum_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:fontFamily="@font/poppins"
+        android:text="1 hour ago"
+        android:maxLength="10"
+        android:textColor="#9597A1"
+        android:textSize="12dp"
+        app:layout_constraintStart_toEndOf="@+id/forum_profile"
+        app:layout_constraintTop_toBottomOf="@+id/forum_name" />
+
+    <ImageView
+        android:id="@+id/forum_post_pic"
+        android:layout_width="0dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="10dp"
+
+        android:background="@drawable/post_bg"
+        android:scaleType="centerCrop"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/forum_time" />
+
+    <TextView
+        android:id="@+id/forum_post_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/poppins"
+        android:lineHeight="18dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="40dp"
+        android:text="m.Saleh I thought, what can we do here that’ll make a big impact, where we can affect the
+... more"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/forum_post_pic"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/forum_post_pic"
+        app:layout_constraintTop_toBottomOf="@+id/forum_post_pic" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/form"
+        android:hint="Comment Here..."
+        android:paddingLeft="20dp"
+        android:layout_marginEnd="70dp"
+        android:textColorHint="@color/hint_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintStart_toStartOf="@+id/forum_post_pic"
+        app:layout_constraintTop_toBottomOf="@+id/forum_post_text" />
+
+    <TextView
+        android:id="@+id/send_comment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Send"
+        android:textColor="@color/Main_color"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/editText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editText"
+        app:layout_constraintTop_toTopOf="@+id/editText" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
