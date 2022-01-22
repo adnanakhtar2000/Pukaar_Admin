@@ -32,27 +32,28 @@ dashboardBinding.bottomNavigation1.setOnNavigationItemSelectedListener{
     when(it.itemId){
         R.id.bottom_home -> {
          val   dashboardFragment = Dashboard_Fragment()
-            supportFragmentManager.beginTransaction().replace(R.id.container, dashboardFragment).commit()
+            supportFragmentManager.beginTransaction().addToBackStack("").add(R.id.container, dashboardFragment).commit()
         }
 
         R.id.nav_room -> {
             val   userFragment = User_Fragment()
-            supportFragmentManager.beginTransaction().replace(R.id.container, userFragment).commit()
+            supportFragmentManager.beginTransaction().addToBackStack("").add(R.id.container, userFragment).commit()
 
         }
 
         R.id.nav_therapist -> {
             val   therapistListFragment = Therapist_List_Fragment()
-            supportFragmentManager.beginTransaction().replace(R.id.container, therapistListFragment).commit()
+            supportFragmentManager.beginTransaction().addToBackStack("").add(R.id.container, therapistListFragment).commit()
 
         }
 
 
         R.id.bottom_settting -> {
             val   settingFragment = Setting_Fragment()
-            supportFragmentManager.beginTransaction().replace(R.id.container, settingFragment).commit()
+            supportFragmentManager.beginTransaction().addToBackStack("").add(R.id.container, settingFragment).commit()
 
         }
+
     }
     return@setOnNavigationItemSelectedListener true
 }
@@ -61,15 +62,15 @@ dashboardBinding.bottomNavigation1.setOnNavigationItemSelectedListener{
             when(it.itemId){
                 R.id.left_session_summary ->{
                     val sessionSummary = Session_Summary()
-                    supportFragmentManager.beginTransaction().replace(R.id.container, sessionSummary).commit()
+                    supportFragmentManager.beginTransaction().addToBackStack("").add(R.id.container, sessionSummary).commit()
                 }
                 R.id.left_setting ->{
                     val setting = Setting_Fragment()
-                    supportFragmentManager.beginTransaction().replace(R.id.container, setting).commit()
+                    supportFragmentManager.beginTransaction().addToBackStack("").add(R.id.container, setting).commit()
                 }
                 R.id.left_donated_sessions ->{
                     val donated_sessions = Donated_Sessions()
-                    supportFragmentManager.beginTransaction().replace(R.id.container, donated_sessions).commit()
+                    supportFragmentManager.beginTransaction().addToBackStack("").add(R.id.container, donated_sessions).commit()
                 }
 
 
@@ -90,6 +91,10 @@ dashboardBinding.bottomNavigation1.setOnNavigationItemSelectedListener{
                     val intent = Intent(applicationContext , Add_Bank_Detail::class.java)
                     startActivity(intent)
 
+                }
+                R.id.left_notification ->{
+                    val notifications = Notifications()
+                    supportFragmentManager.beginTransaction().addToBackStack("").add(R.id.container, notifications).commit()
                 }
 
             }

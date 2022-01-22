@@ -151,5 +151,8 @@ interface ApiInterface {
         @Part("picture\"; filename=\"pp.png") file: RequestBody?
     ): Call<String?>?
 
+
+    @GET("get-notifications/2")
+    fun getNotification(@Header("Authorization") authorization: String?): Call<ArrayList<NotificationResponse?>?>?
 }
 
