@@ -151,5 +151,11 @@ interface ApiInterface {
         @Part("picture\"; filename=\"pp.png") file: RequestBody?
     ): Call<String?>?
 
+    @FormUrlEncoded
+    @POST("admin/update/therapist")
+    fun assignedTherapist(
+        @Header("Authorization") authorization: String?, @Field("client_profile_id") client_id: Int?, @Field("therapist_profile_id") therapist_id: Int?
+    ): Call<String>?
+
 }
 

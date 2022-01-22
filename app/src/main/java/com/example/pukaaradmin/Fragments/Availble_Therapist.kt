@@ -76,7 +76,6 @@ class Availble_Therapist : Fragment() {
 
  }*/
 
-
         return availbleTherapistBinding.root
     }
 

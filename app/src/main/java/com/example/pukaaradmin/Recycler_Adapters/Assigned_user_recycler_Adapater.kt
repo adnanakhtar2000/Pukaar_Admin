@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pukaaradmin.CommonFunction
@@ -29,6 +30,7 @@ class Assigned_user_recycler_Adapater(val data: ArrayList<UsersData> , val conte
 
         holder.itemView.setOnClickListener{
 
+
    var patientProfile = Patient_Profile()
 
           val bundle = Bundle()
@@ -40,6 +42,7 @@ class Assigned_user_recycler_Adapater(val data: ArrayList<UsersData> , val conte
             transaction.replace(R.id.container, patientProfile )
             transaction.disallowAddToBackStack()
             transaction.commit()
+
         }
     }
 
