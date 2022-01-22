@@ -56,7 +56,7 @@ class Patient_Profile : Fragment() {
             var therapist = Availble_Therapist()
             val transaction = (context as AppCompatActivity).supportFragmentManager.beginTransaction()
             transaction.replace(R.id.container, therapist )
-            transaction.disallowAddToBackStack()
+//            transaction.disallowAddToBackStack()
             transaction.commit()
         }
 
