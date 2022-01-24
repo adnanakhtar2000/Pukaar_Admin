@@ -53,7 +53,7 @@ class Patient_Profile : Fragment() {
         }
 
         patientProfileBinding.assignTheropist.setOnClickListener {
-            var therapist = Availble_Therapist()
+            var therapist = Assign_Therpaist_to_patient()
             val transaction = (context as AppCompatActivity).supportFragmentManager.beginTransaction()
             transaction.replace(R.id.container, therapist )
 //            transaction.disallowAddToBackStack()

@@ -50,32 +50,32 @@ class Availble_Therapist_recycler_Adapater(val data: ArrayList<UsersData>  ,val 
 
         holder.itemView.setOnClickListener{
 
-            val therapistResponse = apiInterface.assignedTherapist(CommonFunction.getToken(context),12 ,2)
-            therapistResponse?.enqueue(object : Callback<String> {
-                override fun onResponse(call: Call<String>, response: Response<String>) {
-                    Toast.makeText(context, "success", Toast.LENGTH_SHORT).show()
-                    val transaction = (context as AppCompatActivity).supportFragmentManager.beginTransaction()
-                    transaction.remove(Availble_Therapist())
-                }
+//            val therapistResponse = apiInterface.assignedTherapist(CommonFunction.getToken(context),12 ,2)
+//            therapistResponse?.enqueue(object : Callback<String> {
+//                override fun onResponse(call: Call<String>, response: Response<String>) {
+//                    Toast.makeText(context, "success", Toast.LENGTH_SHORT).show()
+//                    val transaction = (context as AppCompatActivity).supportFragmentManager.beginTransaction()
+//                    transaction.remove(Availble_Therapist())
+//                }
+//
+//                override fun onFailure(call: Call<String>, t: Throwable) {
+//                    Toast.makeText(context, "error", Toast.LENGTH_SHORT).show()
+//                }
+//            })
 
-                override fun onFailure(call: Call<String>, t: Throwable) {
-                    Toast.makeText(context, "error", Toast.LENGTH_SHORT).show()
-                }
-            })
+            var therapist_Profile = Therapist_Profile()
 
-//            var therapist_Profile = Therapist_Profile()
-//
-//            val bundle = Bundle()
-//            bundle.putParcelable("dataobject" , data.get(position))
-//            therapist_Profile.arguments = bundle
-//
-//
-//
-//
-//            val transaction = (context as AppCompatActivity).supportFragmentManager.beginTransaction()
-//            transaction.replace(R.id.container, therapist_Profile )
-//            transaction.disallowAddToBackStack()
-//            transaction.commit()
+            val bundle = Bundle()
+            bundle.putParcelable("dataobject" , data.get(position))
+            therapist_Profile.arguments = bundle
+
+
+
+
+            val transaction = (context as AppCompatActivity).supportFragmentManager.beginTransaction()
+            transaction.replace(R.id.container, therapist_Profile )
+            transaction.disallowAddToBackStack()
+            transaction.commit()
         }
     }
 
