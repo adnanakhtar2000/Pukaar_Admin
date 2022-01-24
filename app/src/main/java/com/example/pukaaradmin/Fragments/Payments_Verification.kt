@@ -31,7 +31,6 @@ private lateinit var paymentsVerificationBinding: FragmentPaymentsVerificationBi
 
         val viewPager : ViewPager = paymentsVerificationBinding.paymnetViewpager
         val tabLayout = paymentsVerificationBinding.dwm2
-
         val paymentTabAdapters = Payment_Tab_Adapters(childFragmentManager)
         paymentTabAdapters.addfragment(Approved_fragment() , "Approved")
         paymentTabAdapters.addfragment(Pending_Fragment() , "Pending")
@@ -40,6 +39,4 @@ private lateinit var paymentsVerificationBinding: FragmentPaymentsVerificationBi
         tabLayout.setupWithViewPager(viewPager)
         return paymentsVerificationBinding.root
     }
-
-
 }

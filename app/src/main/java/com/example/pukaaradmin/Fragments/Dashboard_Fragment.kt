@@ -33,20 +33,24 @@ private lateinit var userFragment: User_Fragment
 
         dashboardBinding.cardView.setOnClickListener{
             userFragment = User_Fragment()
-      fragmentManager?.beginTransaction()?.replace(R.id.container , userFragment)?.commit()
+      fragmentManager?.beginTransaction()?.addToBackStack("")?.add(R.id.container , userFragment)?.commit()
         }
         dashboardBinding.cardView2.setOnClickListener{
            val therapist_list = Therapist_List_Fragment()
-            fragmentManager?.beginTransaction()?.replace(R.id.container , therapist_list)?.commit()
+            fragmentManager?.beginTransaction()?.addToBackStack("")?.add(R.id.container , therapist_list)?.commit()
         }
         dashboardBinding.cardView4.setOnClickListener{
             val paymentsVerification = Payments_Verification()
-            fragmentManager?.beginTransaction()?.replace(R.id.container , paymentsVerification)?.commit()
+            fragmentManager?.beginTransaction()?.addToBackStack("")?.add(R.id.container , paymentsVerification)?.commit()
         }
 
         dashboardBinding.cardView5.setOnClickListener{
             val sessionSummary= Session_Summary()
-            fragmentManager?.beginTransaction()?.replace(R.id.container , sessionSummary)?.commit()
+            fragmentManager?.beginTransaction()?.addToBackStack("")?.add(R.id.container , sessionSummary)?.commit()
+        }
+        dashboardBinding.cardView3.setOnClickListener{
+
+            fragmentManager?.beginTransaction()?.addToBackStack("")?.add(R.id.container , Notifications())?.commit()
         }
         dashboardBinding.cardView6.setOnClickListener{
            val intent = Intent(requireContext() , Pukaar_Forum::class.java)

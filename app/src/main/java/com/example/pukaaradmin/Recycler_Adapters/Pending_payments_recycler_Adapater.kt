@@ -83,8 +83,7 @@ class Pending_payments_recycler_Adapater(val paymentdata: ArrayList<UserData_pay
             dialog.accept_button.setOnClickListener {
                var status : String = "approved"
 
-                val call =
-                    apiInterface.getUserSessionUpdate(CommonFunction.getToken(context), status , paymentdata[position].id.toString() )
+                val call = apiInterface.getUserSessionUpdate(CommonFunction.getToken(context), status , paymentdata[position].id.toString() )
                 call.enqueue(object : Callback<String> {
                     override fun onResponse(
                         call: Call<String>?,
