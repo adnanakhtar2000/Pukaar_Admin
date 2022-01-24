@@ -26,7 +26,6 @@ interface ApiInterface {
 
     @FormUrlEncoded
     @POST("register")
-
     fun getRegisterResponse(
         @Field("first_name") fName: String,
         @Field("last_name") LName: String,
@@ -62,7 +61,7 @@ interface ApiInterface {
 
     ): Call<TherapistListResponse>
 
-    fun getRegisterResponse(@Field("first_name") fName: String,@Field("last_name") LName: String,@Field("email") email: String,
+    fun getRegisterResponse2(@Field("first_name") fName: String,@Field("last_name") LName: String,@Field("email") email: String,
                             @Field("mobile_number") mobile: String,
                          @Field("password") password: String,
                          @Field("c_password") Cpassword: String,
