@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".activity.Privacy_Policy">
+    tools:context=".activity.Terms_of_use">
+
     <Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -38,7 +39,7 @@
         android:layout_height="wrap_content"
         android:elevation="10dp"
         android:fontFamily="@font/poppins_medium"
-        android:text="Privacy Policy"
+        android:text="Terms &amp; Conditions"
         android:textColor="@color/Main_color"
         android:textSize="16dp"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
@@ -73,57 +74,57 @@
             android:layout_height="match_parent">
 
 
-            <TextView
-                android:id="@+id/lorem_ipsum"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
+    <TextView
+        android:id="@+id/lorem_ipsum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
 
-                android:layout_marginRight="20dp"
-                android:fontFamily="@font/poppins_medium"
-                android:gravity="top"
-                android:justificationMode="inter_word"
-                android:text="@string/privacy_policy"
-                android:textColor="@color/black"
-                android:textSize="12sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/scroll"
+        android:layout_marginRight="20dp"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="top"
+        android:justificationMode="inter_word"
+        android:text="@string/terms_condition"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/scroll"
 
-                />
-            <TextView
-                android:id="@+id/lorem_ipsum1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="20dp"
-                android:fontFamily="@font/poppins_medium"
-                android:gravity="top"
-                android:justificationMode="inter_word"
-                android:text="@string/privacy_policy2"
-                android:textColor="@color/black"
-                android:textSize="16sp"
+         />
+    <TextView
+        android:id="@+id/lorem_ipsum1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="top"
+        android:justificationMode="inter_word"
+        android:text="@string/terms_condition1"
+        android:textColor="@color/black"
+        android:textSize="16sp"
 
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lorem_ipsum" />
-            <TextView
-                android:id="@+id/lorem_ipsum2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="20dp"
-                android:fontFamily="@font/poppins_medium"
-                android:gravity="top"
-                android:justificationMode="inter_word"
-                android:text="@string/privacy_policy3"
-                android:textColor="@color/black"
-                android:textSize="12sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lorem_ipsum1" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lorem_ipsum" />
+    <TextView
+        android:id="@+id/lorem_ipsum2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="top"
+        android:justificationMode="inter_word"
+        android:text="@string/terms_condition2"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lorem_ipsum1" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

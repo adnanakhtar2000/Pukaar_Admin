@@ -92,6 +92,7 @@ dashboardBinding.bottomNavigation1.setOnNavigationItemSelectedListener{
                     startActivity(intent)
 
                 }
+
                 R.id.left_notification ->{
                     val notifications = Notifications()
                     supportFragmentManager.beginTransaction().addToBackStack("").add(R.id.container, notifications).commit()

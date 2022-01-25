@@ -40,7 +40,7 @@ class Add_Therapist : AppCompatActivity() {
                     2
 
                 val signUpResponse = apiInterface.getRegisterResponse(addTherapistBinding.firstName1.text.toString(),addTherapistBinding.lastNameEditTet.text.toString(),
-                    addTherapistBinding.email1.text.toString(),addTherapistBinding.mobileNumber1.text.toString(),addTherapistBinding.passwordEditText.text.toString(),addTherapistBinding.passwordEditText.text.toString(),"therapist",addTherapistBinding.about1.text.toString(),addTherapistBinding.city1.text.toString(),addTherapistBinding.service1.text.toString(),addTherapistBinding.therapist1.text.toString(),addTherapistBinding.typeDoctor1.text.toString(),statusValue, "", "")
+                    addTherapistBinding.email1.text.toString(),addTherapistBinding.mobileNumber1.text.toString(),addTherapistBinding.passwordEditText.text.toString(),addTherapistBinding.passwordEditText.text.toString(),"therapist",addTherapistBinding.about1.text.toString(),addTherapistBinding.city1.text.toString(),addTherapistBinding.service1.text.toString(),addTherapistBinding.therapist1.text.toString(),addTherapistBinding.typeDoctor1.text.toString(),statusValue, addTherapistBinding.introduction1.text.toString(), addTherapistBinding.education1.text.toString())
                 signUpResponse.enqueue( object : Callback<SignUpResponse> {
                     override fun onResponse(call: Call<SignUpResponse>?, response: Response<SignUpResponse>?) {
 
@@ -54,7 +54,7 @@ class Add_Therapist : AppCompatActivity() {
                             finish()
                         }
                         else
-                            Toast.makeText(applicationContext,"User Already Exists...",
+                            Toast.makeText(applicationContext, "Error",
                                 Toast.LENGTH_LONG).show();
                     }
 

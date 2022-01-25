@@ -4,5 +4,42 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="therapist_profile_Desc">My name is  Zofia. I am a licensed marriage and family therapist. My goal in life is to assist any person/s in need of recovery or growth.</string>
     <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore</string>
+    <string name="terms_condition">Herein included are the Terms and Conditions (the “Agreement) that control the access and usage of our online platform which will give you access to counseling services (collectively the “Platform”). The Platform may or may not be provided access through multiple websites or applications whether owned and/or operated by us or by a third-party client including, without limitation, the app Pukaar and its related website. \n
+
+●	By affirming access or by usage of the Platform, you are entering into this Agreement. It is advised that you read this Agreement prior to your use of the Platform. If you do not agree with any aspects of the Agreement, refrain from using the Platform. \n
+
+●	When the terms “we”, “us”, “our” or similar are used in this Agreement, they refer to any company that owns and operates the Platform (the “Company”).
+</string>
+    <string name="terms_condition1">The Counselors and Counselor Services</string>
+    <string name="terms_condition2">●	The Platform may be used to connect you with a Counselor who will provide services to you through the Platform.\n
+●
+We require therapists providing Services on the Platform to be accredited, trained, and experienced licensed psychologists (PhD / PsyD) with recognized professional certification from authorities based on their state and/or jurisdiction. Counselors must have a relevant academic degree in their field, at least 2 years of experience, after successfully completing the necessary education, exams, training and practice requirements as applicable.\n
+●
+However, we have some counselors, who are not certified psychologists by profession however they have more than 2-3 years of on-ground experience while working with some renowned institution.\n
+●
+The Counselors/therapists are independent service providers who are neither our employees nor agents or representatives of the Company. The Platform’s role is limited to enabling the Counselor Services while the Counselor Services themselves are upholding the responsibility of the Counselor who provides them. If you feel the Counselor Services provided by the Counselor do not fit your needs or expectations, you may contact support who will guide you in changing to a different Counselor who provides services through the Platform.\n
+●
+While we hope and work to ensure the Counselor Services provided here are beneficial to you, you understand, agree and acknowledge that they may not be the only appropriate solution for everyone’s needs and that they may not be appropriate for every particular situation and/or may not be a complete substitute for a face-to-face examination and/or care in every particular situation. \n
+
+●	If you are thinking about suicide or if you are considering harming yourself or others or if you feel that any other person may be in any danger or if you have any medical emergency, you must immediately call the emergency service number (15 in Pakistan) and notify the relevant authorities. Seek immediate in person assistance. The platform is not designed for use in any of the aforementioned cases and the counselors cannot provide the assistance required in any of the aforementioned cases or any medical assistance.\n
+
+●	The platform is not intended for the provision of clinical diagnosis requiring an in-person evaluation and you should not use it if you need any official documentation or approvals for purposes such as, but not limited to, court-ordered counseling or emotional service. It is also not intended for any information regarding which drugs or medical treatment may be appropriate for you, and you should disregard any such advice if delivered through the platform.\n
+
+●	Do not disregard, avoid, or delay in obtaining in-person care from your doctor or other qualified professional because of information or advice you received through the platform.\n
+</string>
+
+
+    <string name="privacy_policy"> ●	Protecting and safeguarding any information you provide through the Platform is extremely important to us. Information about our security and privacy practices can be found on our Privacy Policy. \n
+
+“BY AGREEING TO THIS AGREEMENT AND/OR BY USING THE PLATFORM, YOU ARE ALSO AGREEING TO THE TERMS OF THE PRIVACY POLICY. THE PRIVACY POLICY IS INCORPORATED INTO AND DEEMED A PART OF THIS AGREEMENT. THE SAME RULES THAT APPLY REGARDING CHANGES AND REVISIONS OF THIS AGREEMENT ALSO APPLY TO CHANGES AND REVISIONS OF THE PRIVACY POLICY.”</string>
+    <string name="privacy_policy2">
+Third Party Content
+</string>
+    <string name="privacy_policy3">
+●	The Platform may contain other content, products or services which are offered or provided by third parties (“Third Party Content”), links to Third Party Content (including but not limited to links to other websites) or advertisements which are related to Third Party Content. We have no responsibility for the creation of any such Third-Party Content, including (but not limited to) any related products, practices, terms or policies, and we will not be liable for any damage or loss caused by any Third-Party Content.
+</string>
+    <string name="privacy_policy4">
+
+</string>
 
 </resources>

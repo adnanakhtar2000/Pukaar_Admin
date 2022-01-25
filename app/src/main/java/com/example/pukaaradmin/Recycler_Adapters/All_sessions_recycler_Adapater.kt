@@ -17,7 +17,7 @@ class All_Session_Recycler_Adapter(val pateint_name : List<String> , val date : 
     override fun onBindViewHolder(holder: All_Session_viewholder, position: Int) {
         holder.patient_name.text = pateint_name[position]
         holder.date.text =date[position]
-        holder.time.text=time[position]
+        /*holder.time.text=time[position]*/
         holder.session_taken.text =session_taken[position]
     }
 

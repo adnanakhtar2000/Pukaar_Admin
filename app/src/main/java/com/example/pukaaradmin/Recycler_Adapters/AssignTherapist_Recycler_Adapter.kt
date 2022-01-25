@@ -35,7 +35,7 @@ class AssignTherapist_Recycler_Adapter(val data : ArrayList<UsersData> , val con
         holder.time.text = CommonFunction.dateFormat(data[position].created_at)
         holder.itemView.setOnClickListener{
 
-            val therapistResponse = apiInterface.assignedTherapist(CommonFunction.getToken(context),12 ,2)
+            val therapistResponse = apiInterface.assignedTherapist(CommonFunction.getToken(context),data[position].id ,data.get(position).therapist_profile!!.id)
             therapistResponse?.enqueue(object : Callback<String> {
                 override fun onResponse(call: Call<String>, response: Response<String>) {
                     Toast.makeText(context, "success", Toast.LENGTH_SHORT).show()

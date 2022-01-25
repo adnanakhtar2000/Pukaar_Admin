@@ -22,6 +22,7 @@ class Add_Bank_Detail : AppCompatActivity() {
         setContentView(addBankDetailBinding.root)
         apiInterface = ApiClient.create()
 
+
         addBankDetailBinding.addBankButton.setOnClickListener {
             if(validation())
             {

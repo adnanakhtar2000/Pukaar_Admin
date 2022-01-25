@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".activity.Share">
+    tools:context=".activity.Contact_support">
     <Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -20,7 +20,6 @@
         tools:ignore="NewApi" />
 
     <ImageView
-
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:layout_marginTop="23dp"
@@ -31,13 +30,14 @@
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@+id/toolbar"
-        app:tint="@color/Main_color"
+        app:tint="@color/black"
         tools:ignore="MissingConstraints" />
     <TextView
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="22dp"
-        android:text="Share"
+        android:text="Contact Support"
         android:textColor="@color/Main_color"
         android:fontFamily="@font/poppins_medium"
         android:elevation="10dp"
@@ -47,7 +47,7 @@
         app:layout_constraintTop_toTopOf="@+id/toolbar"/>
 
     <ImageView
-        android:id="@+id/back_arrow_26"
+        android:id="@+id/back_arrow_15"
         android:layout_width="40dp"
         android:layout_height="24dp"
         android:layout_marginLeft="23dp"
@@ -61,42 +61,34 @@
         app:tint="#004481"
         tools:ignore="MissingConstraints" />
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="224dp"
-        android:src="@drawable/ic_share_svg"
-        android:layout_marginTop="79dp"
-        app:layout_constraintTop_toTopOf="parent"
+    <View
+        android:id="@+id/image_60"
+        android:layout_width="354dp"
+        android:layout_height="237dp"
+        android:layout_marginTop="104dp"
+        android:layout_marginLeft="11dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/support"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Share with your community !"
-        android:layout_marginTop="352dp"
-        android:textColor="@color/black"
-        android:textSize="18dp"
-        android:fontFamily="@font/poppins_medium"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
+        />
 
-    <Button
-        android:id="@+id/donate_now_button"
-        android:layout_width="343dp"
-        android:layout_height="44dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="24dp"
-        android:background="@drawable/login_button"
-        android:fontFamily="@font/poppins"
-        android:text="Share"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <TextView
+        android:id="@+id/lorem_ipsum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="367dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:justificationMode="inter_word"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="top"
+        android:text="@string/lorem_ipsum"
+        android:textColor="@color/black"
+        android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.95" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

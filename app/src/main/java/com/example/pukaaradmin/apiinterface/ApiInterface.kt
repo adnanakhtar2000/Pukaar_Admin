@@ -61,7 +61,7 @@ interface ApiInterface {
 
     ): Call<TherapistListResponse>
 
-    fun getRegisterResponse2(@Field("first_name") fName: String,@Field("last_name") LName: String,@Field("email") email: String,
+  /*  fun getRegisterResponse2(@Field("first_name") fName: String,@Field("last_name") LName: String,@Field("email") email: String,
                             @Field("mobile_number") mobile: String,
                          @Field("password") password: String,
                          @Field("c_password") Cpassword: String,
@@ -71,7 +71,7 @@ interface ApiInterface {
                          @Field("service_therapist_provider") provider: String,
                          @Field("therapist_focus") focus: String,
                          @Field("type_of_doctor") doctor: String,
-                         @Field("status_id") status: Int) : Call<SignUpResponse>
+                         @Field("status_id") status: Int) : Call<SignUpResponse>*/
     @FormUrlEncoded
     @POST("user")
     fun getUserTherapistResponse(@Header("Authorization") header: String,@Field("role") role: String,@Field("type") type: String) : Call<TherapistListResponse>
@@ -120,6 +120,7 @@ interface ApiInterface {
         @Field("status") status: String,
         @Field("session_id") session_id: String
     ): Call<String>
+
     @FormUrlEncoded
     @GET("users/{id}/edit")
     fun getConnectedUserResponse(@Header("Authorization") header: String, @Field("id") id: String): Call<ConnectUserResponse>
@@ -156,7 +157,7 @@ interface ApiInterface {
     fun getNotification(@Header("Authorization") authorization: String?): Call<ArrayList<NotificationResponse?>?>?
 
     @FormUrlEncoded
-    @POST("admin/update/therapist")
+    @POST("admin/accept/therapist")
     fun assignedTherapist(
         @Header("Authorization") authorization: String?, @Field("client_profile_id") client_id: Int?, @Field("therapist_profile_id") therapist_id: Int?
     ): Call<String>?

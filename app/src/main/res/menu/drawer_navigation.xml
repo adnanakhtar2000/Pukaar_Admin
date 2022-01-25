@@ -6,9 +6,9 @@
     <item android:title="Notification" android:id="@+id/left_notification"  />
 
     <item android:title="Settings" android:id="@+id/left_setting" />
-    <item android:title="Pending Requests" android:id="@+id/left_prnding_request" />
-    <item android:title="Contact Support" android:id="@+id/left_contact_support" />
-    <item android:title="About" android:id="@+id/left_about" />
+
+
+
     <item android:title="Donated Sessions" android:id="@+id/left_donated_sessions" />
     <item android:title="Special Offers" android:id="@+id/left_special_offers" />
     <item android:title="Add Bank Details" android:id="@+id/left_bank_detail" />

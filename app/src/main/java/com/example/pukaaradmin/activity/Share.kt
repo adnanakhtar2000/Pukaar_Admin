@@ -10,7 +10,11 @@ class Share : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        shareBinding = ActivityShareBinding.inflate(layoutInflater)
         setContentView(shareBinding.root)
+        shareBinding.backArrow26.setOnClickListener {
+            finish()
+        }
 
     }
 }

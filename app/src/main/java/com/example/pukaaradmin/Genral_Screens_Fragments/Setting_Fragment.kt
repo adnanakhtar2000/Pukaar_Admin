@@ -8,10 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import com.example.pukaaradmin.*
-import com.example.pukaaradmin.activity.Privacy_Policy
-import com.example.pukaaradmin.activity.Share
-import com.example.pukaaradmin.activity.Subscribe
-import com.example.pukaaradmin.activity.Terms_And_Conditions
+import com.example.pukaaradmin.activity.*
 import com.example.pukaaradmin.databinding.FragmentSettingBinding
 
 
@@ -37,7 +34,7 @@ class Setting_Fragment : Fragment() {
 
         settingBinding.termOfUseButton.setOnClickListener {
             requireActivity().run{
-                startActivity(Intent(this, Terms_And_Conditions::class.java))
+                startActivity(Intent(this, Terms_of_use::class.java))
 
         }
         settingBinding.privacyPolicyButton.setOnClickListener {
@@ -51,6 +48,11 @@ class Setting_Fragment : Fragment() {
                 startActivity(Intent(this, Share::class.java))
             }
         }
+            settingBinding.notificationButton.setOnClickListener {
+                requireActivity().run{
+                    startActivity(Intent(this, Notification_setting::class.java))
+                }
+            }
             settingBinding.subscribeButton.setOnClickListener {
                 requireActivity().run{
                     startActivity(Intent(this, Subscribe::class.java))

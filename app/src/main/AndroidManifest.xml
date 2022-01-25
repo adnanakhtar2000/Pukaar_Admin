@@ -5,6 +5,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -16,20 +17,33 @@
         android:theme="@style/Theme.PukaarAdmin"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
-        <activity android:name=".activity.Pukaar_Forum"/>
+        <activity
+            android:name=".activity.Contact_support"
+            android:exported="false" />
+        <activity
+            android:name=".activity.Notification_setting"
+            android:exported="false" />
+        <activity
+            android:name=".activity.Terms_of_use"
+            android:exported="true" />
+        <activity android:name=".activity.Pukaar_Forum" />
         <activity
             android:name=".activity.Add_Bank_Detail"
             android:exported="false" />
         <activity
             android:name=".activity.Speacial_Offer_create"
             android:exported="false" />
-        <activity android:name=".activity.My_Post"/>
-        <!--<activity
+        <activity android:name=".activity.My_Post" />
+        <!--
+<activity
             android:name=".payment_verification"
-            android:exported="false" />-->
+            android:exported="false" />
+        -->
         <activity
             android:name=".activity.Privacy_Policy"
-            android:exported="false" />
+            android:exported="true">
+
+        </activity>
         <activity
             android:name=".activity.Share"
             android:exported="false" />
@@ -53,7 +67,7 @@
             android:exported="false" />
         <activity
             android:name=".activity.Splash_Screen"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -67,6 +81,7 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+
         <activity
             android:name=".activity.Chat"
             android:exported="false" />
