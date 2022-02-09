@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
+    android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"
     tools:context=".activity.Add_Therapist">
 
     <androidx.appcompat.widget.Toolbar
@@ -34,6 +35,7 @@
         app:layout_constraintTop_toTopOf="@id/toolbar" />
 
     <ImageView
+        android:id="@+id/back_arrow"
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:layout_marginLeft="15dp"
@@ -277,25 +279,50 @@ android:paddingRight="10dp"
         app:layout_constraintStart_toStartOf="@+id/first_name1"
         app:layout_constraintTop_toBottomOf="@id/city1" />
 
-    <EditText
-        android:id="@+id/service1"
-        android:layout_width="0dp"
-        android:layout_height="44dp"
-        android:layout_marginTop="6dp"
-        android:layout_marginRight="15dp"
-        android:hint="Please Enter"
-        android:paddingRight="10dp"
-        android:textColorHint="@color/hint_color"
-        android:paddingLeft="20dp"
-        android:inputType="text"
-        android:textColor="@color/black"
-        android:background="@drawable/add_doctor_form"
-        app:layout_constraintTop_toBottomOf="@id/service"
-        app:layout_constraintLeft_toLeftOf="@id/first_name"
-        app:layout_constraintRight_toRightOf="parent"
-        />
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/service2"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                app:hintAnimationEnabled="false"
+                app:endIconDrawable="@drawable/ic_down_arrow"
+                app:endIconTint="@color/black"
+                app:hintEnabled="false"
+                android:textColorHint="@color/hint_color"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="10dp"
+                android:background="@drawable/form"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/service">
 
-    <TextView
+                <!-- Inside text input layout add
+                      an auto complete text view
+                        and make its input type to none-->
+                <AutoCompleteTextView
+                    android:id="@+id/service1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:cursorVisible="false"
+                    android:textSize="15dp"
+                    android:padding="1dp"
+                    android:hint="Please Select"
+                    android:inputType="none"
+                    android:background="@drawable/form"
+                    android:textColor="@color/black"
+                    android:textColorHint="#6F6F6F"
+
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <TextView
         android:id="@+id/therapist"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -305,7 +332,7 @@ android:paddingRight="10dp"
         android:textSize="15dp"
         android:fontFamily="@font/poppins_medium"
         app:layout_constraintStart_toStartOf="@+id/first_name1"
-        app:layout_constraintTop_toBottomOf="@id/service1" />
+        app:layout_constraintTop_toBottomOf="@id/service2" />
 
     <EditText
         android:id="@+id/therapist1"
@@ -357,24 +384,48 @@ android:paddingRight="10dp"
                 android:fontFamily="@font/poppins_medium"
                 app:layout_constraintStart_toStartOf="@+id/first_name1"
                 app:layout_constraintTop_toBottomOf="@id/therapist_availble" />
-            <EditText
-                android:id="@+id/type_doctor1"
-                android:layout_width="0dp"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/type_doctor2"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
                 android:layout_height="44dp"
-                android:layout_marginTop="6dp"
+                android:layout_marginTop="5dp"
+               android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
-                android:hint="Please Enter"
-                android:paddingRight="10dp"
+                app:hintAnimationEnabled="false"
+                app:endIconDrawable="@drawable/ic_down_arrow"
+                app:endIconTint="@color/black"
+                app:hintEnabled="false"
                 android:textColorHint="@color/hint_color"
-                android:paddingLeft="20dp"
-                android:inputType="text"
-                android:textColor="@color/black"
-                android:background="@drawable/add_doctor_form"
-                app:layout_constraintTop_toBottomOf="@id/type_doctor"
-                app:layout_constraintLeft_toLeftOf="@id/first_name"
-                app:layout_constraintRight_toRightOf="parent"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="10dp"
+                android:background="@drawable/form"
 
-                />
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/type_doctor">
+
+                <!-- Inside text input layout add
+                      an auto complete text view
+                        and make its input type to none-->
+                <AutoCompleteTextView
+                    android:id="@+id/type_doctor1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:cursorVisible="false"
+                    android:textSize="15dp"
+                    android:padding="1dp"
+                    android:hint="Please Select"
+                    android:inputType="none"
+                    android:background="@drawable/form"
+                    android:textColor="@color/black"
+                    android:textColorHint="#6F6F6F"
+
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
                 android:id="@+id/edution"
@@ -386,7 +437,7 @@ android:paddingRight="10dp"
                 android:textSize="15dp"
                 android:fontFamily="@font/poppins_medium"
                 app:layout_constraintStart_toStartOf="@+id/first_name1"
-                app:layout_constraintTop_toBottomOf="@id/type_doctor1" />
+                app:layout_constraintTop_toBottomOf="@id/type_doctor2" />
             <EditText
                 android:id="@+id/education1"
                 android:layout_width="0dp"

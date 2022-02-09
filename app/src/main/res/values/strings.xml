@@ -38,8 +38,18 @@ Third Party Content
     <string name="privacy_policy3">
 ●	The Platform may contain other content, products or services which are offered or provided by third parties (“Third Party Content”), links to Third Party Content (including but not limited to links to other websites) or advertisements which are related to Third Party Content. We have no responsibility for the creation of any such Third-Party Content, including (but not limited to) any related products, practices, terms or policies, and we will not be liable for any damage or loss caused by any Third-Party Content.
 </string>
-    <string name="privacy_policy4">
 
-</string>
 
+<string-array name="Doctor_Type">
+          <item>Clinical Psychologist</item>
+        <item>Therapist</item>
+
+</string-array>
+    <string-array name="Doctor_services">
+        <item>Voice Call</item>
+        <item>Vedio Call</item>
+        <item>Messaging</item>
+        <item>Face to Face</item>
+
+    </string-array>
 </resources>

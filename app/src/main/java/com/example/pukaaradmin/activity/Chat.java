@@ -56,7 +56,7 @@ public class Chat extends AppCompatActivity {
 
     {
         try {
-            mSocket = IO.socket("http://pukar.qareeb.com/api");
+            mSocket = IO.socket("https://pukar.qareeb.com/api");
         } catch (URISyntaxException e) {
             Log.d("myTag", e.getMessage());
             //e.getMessage();

@@ -137,8 +137,7 @@ interface ApiInterface {
     @FormUrlEncoded
     @POST("get-message")
     fun getmessage(
-        @Header("Authorization") authorization: String?, @Field("reciever_id") receiverId: Int?
-    ): Call<GetMessage>?
+        @Header("Authorization") authorization: String?, @Field("reciever_id") receiverId: Int?): Call<GetMessage>?
 
     @GET("forum")
     fun getForumList(@Header("Authorization") authorization: String?): Call<ForumResponse?>?

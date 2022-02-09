@@ -1,12 +1,13 @@
 package com.example.pukaaradmin.activity
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.InputType
+import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.pukaaradmin.ApiClient.ApiClient
-import com.example.pukaaradmin.CommonFunction
-import com.example.pukaaradmin.Response.LoginResponse
+import com.example.pukaaradmin.R
 import com.example.pukaaradmin.Response.SignUpResponse
 import com.example.pukaaradmin.apiinterface.ApiInterface
 import com.example.pukaaradmin.databinding.ActivityAddTherapistBinding
@@ -23,6 +24,20 @@ class Add_Therapist : AppCompatActivity() {
         addTherapistBinding=ActivityAddTherapistBinding.inflate(layoutInflater)
         setContentView(addTherapistBinding.root)
         apiInterface = ApiClient.create()
+        addTherapistBinding.backArrow.setOnClickListener {
+            finish()
+        }
+
+        addTherapistBinding.typeDoctor1.setRawInputType(InputType.TYPE_NULL)
+        addTherapistBinding.service1.setRawInputType(InputType.TYPE_NULL)
+        val provinces = resources.getStringArray(R.array.Doctor_Type)
+        val padapter = ArrayAdapter(this,  R.layout.spinner_dropdown_itemlist, provinces)
+        addTherapistBinding.typeDoctor1.setAdapter(padapter)
+
+        val Doctor_services = resources.getStringArray(R.array.Doctor_services)
+        val padapter1 = ArrayAdapter(this,  R.layout.spinner_dropdown_itemlist, Doctor_services)
+        addTherapistBinding.service1.setAdapter(padapter1)
+
 
 
         addTherapistBinding.addDoctorsButton1.setOnClickListener {

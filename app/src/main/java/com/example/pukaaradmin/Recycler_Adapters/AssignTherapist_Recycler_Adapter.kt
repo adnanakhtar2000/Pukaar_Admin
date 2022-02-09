@@ -1,6 +1,7 @@
 package com.example.pukaaradmin.Recycler_Adapters
 
 import android.content.Context
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.pukaaradmin.ApiClient.ApiClient
 import com.example.pukaaradmin.CommonFunction
 import com.example.pukaaradmin.Fragments.Availble_Therapist
+import com.example.pukaaradmin.Fragments.Therapist_Profile
 import com.example.pukaaradmin.R
 import com.example.pukaaradmin.Response.UsersData
 import com.example.pukaaradmin.apiinterface.ApiInterface
@@ -48,19 +50,16 @@ class AssignTherapist_Recycler_Adapter(val data : ArrayList<UsersData> , val con
                 }
             })
 
-//            var therapist_Profile = Therapist_Profile()
-//
-//            val bundle = Bundle()
-//            bundle.putParcelable("dataobject" , data.get(position))
-//            therapist_Profile.arguments = bundle
-//
-//
-//
-//
-//            val transaction = (context as AppCompatActivity).supportFragmentManager.beginTransaction()
-//            transaction.replace(R.id.container, therapist_Profile )
-//            transaction.disallowAddToBackStack()
-//            transaction.commit()
+         /*  var therapist_Profile = Therapist_Profile()
+
+           val bundle = Bundle()
+            bundle.putParcelable("dataobject" , data.get(position))
+            therapist_Profile.arguments = bundle
+
+            val transaction = (context as AppCompatActivity).supportFragmentManager.beginTransaction()
+            transaction.replace(R.id.container, therapist_Profile )
+           transaction.disallowAddToBackStack()
+           transaction.commit()*/
         }
 
     }
