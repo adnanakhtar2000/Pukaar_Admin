@@ -1,5 +1,6 @@
 package com.example.pukaaradmin.Fragments
 
+import android.app.ProgressDialog
 import com.example.pukaaradmin.Recycler_Adapters.Availble_Therapist_recycler_Adapater
 import android.content.Intent
 import android.os.Bundle
@@ -37,7 +38,11 @@ class Availble_Therapist : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         availbleTherapistBinding = FragmentAvailbleTherapistBinding.inflate(inflater , container , false)
-
+        val progressDialog = ProgressDialog(requireContext())
+        progressDialog.setMessage("Please wait Data is Fetching...")
+        progressDialog.setTitle("Data Fetching")
+        progressDialog.setCancelable(false)
+        progressDialog.show()
         //tab layout setting
         apiInterface = ApiClient.create()
         val therapistResponse = apiInterface.getUserTherapistResponse(CommonFunction.getToken(requireContext()),"therapist","assigned")
@@ -46,6 +51,7 @@ class Availble_Therapist : Fragment() {
 
                 if(response?.body() != null)
                 {
+                    progressDialog.dismiss()
                     val recyclerView = availbleTherapistBinding.availbleTherapistRecyclerView
                     recyclerView.adapter = context?.let {
                         Availble_Therapist_recycler_Adapater(response.body()!!.users.data  ,

@@ -34,6 +34,7 @@ class Therapist_List_Fragment : Fragment() {
         val viewPager : ViewPager = therapistListBinding.viewpagerTherapistList
         val tabLayout = therapistListBinding.tablayoutTherapistList
        //set Adapter
+
         val therapistlistTabAdapters = TherapistList_Tab_Adapters(childFragmentManager)
         therapistlistTabAdapters.addfragment(Availble_Therapist() , "Available Therapists")
         therapistlistTabAdapters.addfragment(UnAvailble_Therapist() , "Un-Available Therapists")

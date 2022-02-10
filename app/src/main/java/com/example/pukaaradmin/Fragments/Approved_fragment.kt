@@ -1,17 +1,15 @@
 package com.example.pukaaradmin.Fragments
 
-import com.example.pukaaradmin.Recycler_Adapters.Approved_payments_recycler_Adapater
+import android.app.ProgressDialog
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.pukaaradmin.ApiClient.ApiClient
 import com.example.pukaaradmin.CommonFunction
-import com.example.pukaaradmin.R
-import com.example.pukaaradmin.Recycler_Adapters.Rejected_payments_recycler_Adapater
+import com.example.pukaaradmin.Recycler_Adapters.Approved_payments_recycler_Adapater
 import com.example.pukaaradmin.Response.UserSessionResponse
 import com.example.pukaaradmin.apiinterface.ApiInterface
 import com.example.pukaaradmin.databinding.FragmentApprovedFragmentBinding
@@ -40,6 +38,11 @@ class Approved_fragment : Fragment() {
         // Inflate the layout for this fragment
         val reccyler_view = approvedFragmentBinding.approvedPaymentRecycler
         apiInterface = ApiClient.create()
+       val progressDialog = ProgressDialog(requireContext())
+        progressDialog.setMessage("Please wait Data is Fetching...")
+        progressDialog.setTitle("Data Fetching")
+        progressDialog.setCancelable(false)
+        progressDialog.show()
         val call = apiInterface.getUserSessionDetails(CommonFunction.getToken(requireContext()),"approved")
         call.enqueue(object : Callback<UserSessionResponse> {
             override fun onResponse(
@@ -48,6 +51,7 @@ class Approved_fragment : Fragment() {
             ) {
                 if (response?.body() != null) {
                     if(requireContext()!= null) {
+                        progressDialog.dismiss()
                         val recyclerView = approvedFragmentBinding.approvedPaymentRecycler
                         recyclerView.adapter = Approved_payments_recycler_Adapater(
                             response.body()!!.data,

@@ -1,5 +1,6 @@
 package com.example.pukaaradmin.Fragments
 
+import android.app.ProgressDialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -38,7 +39,11 @@ class Connected_User : Fragment() {
         textview.setText("Connected User")
         connectedUserBinding = FragmentConnectedUserBinding.inflate(inflater , container , false)
         apiInterface = ApiClient.create()
-
+        val progressDialog = ProgressDialog(requireContext())
+        progressDialog.setMessage("Please wait Data is Fetching...")
+        progressDialog.setTitle("Data Fetching")
+        progressDialog.setCancelable(false)
+        progressDialog.show()
         val bundle : String? = requireArguments().getString("dataobject1")
 
        /* val data: Therapist_Profile = arguments?.getParcelable<Therapist_Profile>("dataobject1") as Therapist_Profile*/
@@ -50,6 +55,7 @@ class Connected_User : Fragment() {
             ) {
                 if (response?.body() != null) {
                     if(requireContext()!= null) {
+                        progressDialog.dismiss()
                         val reccyler_view = connectedUserBinding.connectedUserRecycler
                         reccyler_view.adapter = Connected_user_recycler_Adapater(response.body()!!.user.therapist_profile.client , requireContext())
                         // response.body()!!.user.therapist_profile.client       // pass this list to adapter

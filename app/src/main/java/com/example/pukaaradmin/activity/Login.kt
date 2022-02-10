@@ -1,9 +1,11 @@
 package com.example.pukaaradmin.activity
 
+import android.app.ProgressDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.core.content.ContentProviderCompat.requireContext
 import com.example.pukaaradmin.ApiClient.ApiClient
 import com.example.pukaaradmin.CommonFunction
 import com.example.pukaaradmin.Response.LoginResponse
@@ -26,6 +28,11 @@ class Login : AppCompatActivity() {
         setContentView(loginBinding.root)
         loginBinding.loginScreenButton.setOnClickListener {
             if (email_validation() && password_validation()){
+                val progressDialog = ProgressDialog(this)
+                progressDialog.setMessage("Please wait Data is Fetching...")
+                progressDialog.setTitle("Data Fetching")
+                progressDialog.setCancelable(false)
+                progressDialog.show()
 
                 val loginResponse = apiInterface.getLoginResponse(loginBinding.mainEmail.text.toString(),loginBinding.mainPassword.text.toString())
                 loginResponse.enqueue( object : Callback<LoginResponse> {
@@ -34,7 +41,7 @@ class Login : AppCompatActivity() {
                         if(response?.body() != null)
                         {
 
-
+progressDialog.dismiss()
                             CommonFunction.saveToken(applicationContext, response.body()!!.data.token)
                             CommonFunction.saveName(applicationContext, response.body()!!.data.first_name+" "+response.body()!!.data.last_name)
                             CommonFunction.saveUserId(applicationContext, response.body()!!.data.user_id.toString())
@@ -77,9 +84,9 @@ class Login : AppCompatActivity() {
 
                         }
                         else
-                            Toast.makeText(applicationContext,"Invalid Email and Password...",Toast.LENGTH_LONG).show();
-                    }
-
+                            progressDialog.dismiss()
+                             }
+//admin panel
                     override fun onFailure(call: Call<LoginResponse>?, t: Throwable?) {
 
                     }

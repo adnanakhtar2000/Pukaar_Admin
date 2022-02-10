@@ -1,5 +1,6 @@
 package com.example.pukaaradmin.Fragments
 
+import android.app.ProgressDialog
 import com.example.pukaaradmin.Recycler_Adapters.All_Session_Recycler_Adapter
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -39,6 +40,11 @@ private  lateinit var donatedSessionsBinding: FragmentDonatedSessionsBinding
     ): View? {
         val textview : TextView = requireActivity().findViewById<TextView>(R.id.title_toolbar)
         textview.setText("Donated Sessions")
+        val progressDialog = ProgressDialog(requireContext())
+        progressDialog.setMessage("Please wait Data is Fetching...")
+        progressDialog.setTitle("Data Fetching")
+        progressDialog.setCancelable(false)
+        progressDialog.show()
         donatedSessionsBinding = FragmentDonatedSessionsBinding.inflate(inflater , container , false)
         apiInterface = ApiClient.create()
 
@@ -49,6 +55,7 @@ private  lateinit var donatedSessionsBinding: FragmentDonatedSessionsBinding
                 response: Response<UserSessionResponse>?
             ) {
                 if (response?.body() != null) {
+                    progressDialog.dismiss()
                     val reccyler_view = donatedSessionsBinding.donatedSessionsRecycler
                     reccyler_view.adapter = Donated_Session_Recycler_Adapter(response.body()!!.data )
                     reccyler_view.layoutManager = LinearLayoutManager(context , LinearLayoutManager.VERTICAL , false)

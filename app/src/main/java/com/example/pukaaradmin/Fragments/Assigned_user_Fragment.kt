@@ -1,5 +1,6 @@
 package com.example.pukaaradmin.Fragments
 
+import android.app.ProgressDialog
 import android.content.Context
 import com.example.pukaaradmin.Recycler_Adapters.Assigned_user_recycler_Adapater
 import android.os.Bundle
@@ -37,7 +38,11 @@ private lateinit var apiInterface: ApiInterface
         savedInstanceState: Bundle?
     ): View? {
        assignedUserBinding = FragmentAssignedUserBinding.inflate(inflater , container , false)
-
+        val progressDialog = ProgressDialog(requireContext())
+        progressDialog.setMessage("please wait Data is Fetching...")
+        progressDialog.setTitle("Data Fetching")
+        progressDialog.setCancelable(false)
+        progressDialog.show()
         apiInterface = ApiClient.create()
         val assignedUser = apiInterface.getUserTherapistResponse(CommonFunction.getToken(requireContext()),"client","assigned")
         assignedUser.enqueue( object : Callback<TherapistListResponse> {
@@ -46,6 +51,7 @@ private lateinit var apiInterface: ApiInterface
                 if(response?.body() != null)
                 {
                     if(mContext != null) {
+                        progressDialog.dismiss()
                     val recyclerView = assignedUserBinding.assignedUserRecycler
                     recyclerView.adapter = Assigned_user_recycler_Adapater(
                         response.body()!!.users.data,
@@ -62,6 +68,7 @@ private lateinit var apiInterface: ApiInterface
             override fun onFailure(call: Call<TherapistListResponse>?, t: Throwable?) {
                 Toast.makeText(requireContext(),"Error...",
                     Toast.LENGTH_LONG).show();
+                progressDialog.dismiss()
             }
         })
 

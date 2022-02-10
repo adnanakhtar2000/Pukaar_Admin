@@ -1,5 +1,6 @@
 package com.example.pukaaradmin.Fragments
 
+import android.app.ProgressDialog
 import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -28,8 +29,14 @@ class Patient_Profile : Fragment() {
     ): View? {
         val textview : TextView = requireActivity().findViewById<TextView>(R.id.title_toolbar)
         textview.setText("Patient Profile")
+
         patientProfileBinding= FragmentPatientProfileBinding.inflate(inflater , container , false)
         // Inflate the layout for this fragment
+        val progressDialog = ProgressDialog(requireContext())
+        progressDialog.setMessage("Please wait Data is Fetching...")
+        progressDialog.setTitle("Data Fetching")
+        progressDialog.setCancelable(false)
+        progressDialog.show()
         val bundle : Bundle? = arguments
         val data: UsersData = arguments?.getParcelable<UsersData>("user data") as UsersData
         val id: String? = arguments?.getString("id","0")
@@ -37,6 +44,7 @@ class Patient_Profile : Fragment() {
         patientProfileBinding.patientNameProfile.text = data.first_name + " " + data.last_name
 
         if (data.client_profile != null){
+            progressDialog.dismiss()
         patientProfileBinding.ans1.text = data.client_profile!!.orientation.toString()
         patientProfileBinding.ans2.text = data.client_profile!!.religion
         patientProfileBinding.ans3.text = data.client_profile!!.religion_identifier

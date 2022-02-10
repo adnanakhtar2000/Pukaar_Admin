@@ -6,6 +6,7 @@ import com.example.pukaaradmin.Genral_Screens_Fragments.Setting_Fragment
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.view.GravityCompat
+import com.example.pukaaradmin.CommonFunction
 import com.example.pukaaradmin.R
 import com.example.pukaaradmin.databinding.ActivityDashboardBinding
 
@@ -77,6 +78,7 @@ dashboardBinding.bottomNavigation1.setOnNavigationItemSelectedListener{
                 R.id.Logout ->{
                     val intent = Intent(applicationContext , Login::class.java)
                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+
                     startActivity(intent)
                     finish()
                 }

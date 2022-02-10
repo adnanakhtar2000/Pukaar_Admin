@@ -1,5 +1,6 @@
 package com.example.pukaaradmin.Fragments
 
+import android.app.ProgressDialog
 import android.content.Context
 import com.example.pukaaradmin.Recycler_Adapters.Re_Assigned_user_recycler_Adapater
 import android.os.Bundle
@@ -38,6 +39,11 @@ class Reassigned_user_Fragment : Fragment() {
         // Inflate the layout for this fragment
         reassignedUserBinding = FragmentReassignedUserBinding.inflate(inflater , container , false)
         apiInterface = ApiClient.create()
+        val progressDialog = ProgressDialog(requireContext())
+        progressDialog.setMessage("Please wait Data is Fetching...")
+        progressDialog.setTitle("Data Fetching")
+        progressDialog.setCancelable(false)
+        progressDialog.show()
         val therapistResponse = apiInterface.getUserTherapistResponse(CommonFunction.getToken(requireContext()),"client","reassigned")
         therapistResponse.enqueue( object : Callback<TherapistListResponse> {
             override fun onResponse(call: Call<TherapistListResponse>?, response: Response<TherapistListResponse>?) {
@@ -45,6 +51,7 @@ class Reassigned_user_Fragment : Fragment() {
                 if(response?.body() != null) {
                     if (mContext != null)
                     {
+                        progressDialog.dismiss()
                     val recyclerView = reassignedUserBinding.ReAssignedUserRecycler
                     recyclerView.adapter = Assigned_user_recycler_Adapater(
                         response.body()!!.users.data,

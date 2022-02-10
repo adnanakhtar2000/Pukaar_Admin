@@ -1,5 +1,6 @@
 package com.example.pukaaradmin.Fragments
 
+import android.app.ProgressDialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -39,6 +40,11 @@ class Therapist_Profile : Fragment() {
         textview.setText("Therapist Profile")
         therapistProfileBinding = com.example.pukaaradmin.databinding.FragmentTherapistProfileBinding.inflate(inflater , container , false)
         // Inflate the layout for this fragment
+        val progressDialog = ProgressDialog(requireContext())
+        progressDialog.setMessage("Please wait Data is Fetching...")
+        progressDialog.setTitle("Data Fetching")
+        progressDialog.setCancelable(false)
+        progressDialog.show()
         val bundle : Bundle? = arguments
         val data: UsersData = arguments?.getParcelable<UsersData>("dataobject") as UsersData
 
@@ -50,6 +56,7 @@ class Therapist_Profile : Fragment() {
         therapistProfileBinding.docAbout.text = data?.therapist_profile?.about
         therapistProfileBinding.introduction.text = data?.therapist_profile?.introduction
         therapistProfileBinding.docEducation.text = data?.therapist_profile?.education
+        progressDialog.dismiss()
 
       therapistProfileBinding.button1.setOnClickListener {
             var connectedUser = Connected_User()

@@ -1,5 +1,6 @@
 package com.example.pukaaradmin.Fragments
 
+import android.app.ProgressDialog
 import com.example.pukaaradmin.Recycler_Adapters.Approved_payments_recycler_Adapater
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -38,7 +39,11 @@ private lateinit var rejectedBinding: FragmentRejectedBinding
         savedInstanceState: Bundle?
     ): View? {
         rejectedBinding = FragmentRejectedBinding.inflate(inflater ,  container , false)
-
+        val progressDialog = ProgressDialog(requireContext())
+        progressDialog.setMessage("Please wait Data is Fetching...")
+        progressDialog.setTitle("Data Fetching")
+        progressDialog.setCancelable(false)
+        progressDialog.show()
         val reccyler_view = rejectedBinding.rejectedPaymentRecycler
         apiInterface = ApiClient.create()
         val call = apiInterface.getUserSessionDetails(CommonFunction.getToken(requireContext()),"rejected")
@@ -48,6 +53,7 @@ private lateinit var rejectedBinding: FragmentRejectedBinding
                 response: Response<UserSessionResponse>?
             ) {
                 if (response?.body() != null) {
+                    progressDialog.dismiss()
                     val recyclerView = rejectedBinding.rejectedPaymentRecycler
                     recyclerView.adapter = Rejected_payments_recycler_Adapater(response.body()!!.data  ,requireContext())
                     recyclerView.layoutManager = LinearLayoutManager(context , LinearLayoutManager.VERTICAL , false)

@@ -1,5 +1,6 @@
 package com.example.pukaaradmin.Fragments
 
+import android.app.ProgressDialog
 import com.example.pukaaradmin.Recycler_Adapters.Pending_payments_recycler_Adapater
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -37,7 +38,11 @@ private lateinit var pendingBinding: FragmentPendingBinding
     ): View? {
         pendingBinding= FragmentPendingBinding.inflate(inflater , container , false )
         // Inflate the layout for this fragment
-
+        val progressDialog = ProgressDialog(requireContext())
+        progressDialog.setMessage("Please wait Data is Fetching...")
+        progressDialog.setTitle("Data Fetching")
+        progressDialog.setCancelable(false)
+        progressDialog.show()
         // Inflate the layout for this fragment
         val reccyler_view = pendingBinding.pendingPaymentRecycler
         apiInterface = ApiClient.create()
@@ -48,6 +53,7 @@ private lateinit var pendingBinding: FragmentPendingBinding
                 response: Response<UserSessionResponse>?
             ) {
                 if (response?.body() != null) {
+                    progressDialog.dismiss()
                     val reccyler_view = pendingBinding.pendingPaymentRecycler
 
                     reccyler_view.adapter = Pending_payments_recycler_Adapater(response.body()!!.data  ,requireContext())
