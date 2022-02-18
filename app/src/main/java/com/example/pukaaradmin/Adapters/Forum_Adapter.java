@@ -53,7 +53,7 @@ public class Forum_Adapter extends RecyclerView.Adapter<forum_viewholder> {
         holder.forum_time.setText(Forumresponce.get(position).createdAt );
        /* holder.forum_post_pic.setImageResource(Integer.parseInt(Forumresponce.get(position).Fdata.get(position).picture));*/
         Glide.with(context1)
-                .load("http://pukar.qareeb.com" + Forumresponce.get(position).picture)
+                .load("https://pukar.qareeb.com" + Forumresponce.get(position).picture)
                 .centerCrop()
                 .into(holder.forum_post_pic);
         holder.send_comment.setOnClickListener(new View.OnClickListener() {

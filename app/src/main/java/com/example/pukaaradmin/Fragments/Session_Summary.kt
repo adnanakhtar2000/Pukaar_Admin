@@ -37,13 +37,11 @@ class Session_Summary : Fragment() {
 
         //intilize Adapter
         val sessionSummaryTabAdapter = Session_Summary_Tab_Adapter(childFragmentManager)
-        sessionSummaryTabAdapter.addfragment(All_Sessions() , "All Sessions")
-        sessionSummaryTabAdapter.addfragment(Pending_Sessions() , "Pending")
-        sessionSummaryTabAdapter.addfragment(oneOnone_sessions() , "1 On 1 Sessions")
-
+        sessionSummaryTabAdapter.addfragment(Session_Summary_Day() , "All Sessions")
+        sessionSummaryTabAdapter.addfragment(Session_Summary_Day() , "Pending")
+        sessionSummaryTabAdapter.addfragment(Session_Summary_Day() , "1 On 1 Sessions")
         viewpager.adapter = sessionSummaryTabAdapter
         tabLayout.setupWithViewPager(viewpager)
-
         return sessionSummaryBinding.root
     }
 
