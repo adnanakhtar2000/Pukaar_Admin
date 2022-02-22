@@ -129,6 +129,18 @@ interface ApiInterface {
     fun getmessage(
         @Header("Authorization") authorization: String?, @Field("reciever_id") receiverId: Int?): Call<GetMessage>?
 
+
+    @GET("get-notifications/2")
+    fun getNotification(@Header("Authorization") authorization: String?): Call<ArrayList<NotificationResponse?>?>?
+
+    @FormUrlEncoded
+    @POST("admin/accept/therapist")
+    fun assignedTherapist(
+        @Header("Authorization") authorization: String?, @Field("client_profile_id") client_id: Int?, @Field("therapist_profile_id") therapist_id: Int?
+    ): Call<String>?
+
+    @GET("session-logs")
+    fun SessionsLogs(@Header("Authorization") authorization: String?): Call<Sessions_LogResponse?>?
     @GET("forum")
     fun getForumList(@Header("Authorization") authorization: String?): Call<ForumResponse?>?
 
@@ -142,16 +154,5 @@ interface ApiInterface {
 
 
 
-    @GET("get-notifications/2")
-    fun getNotification(@Header("Authorization") authorization: String?): Call<ArrayList<NotificationResponse?>?>?
-
-    @FormUrlEncoded
-    @POST("admin/accept/therapist")
-    fun assignedTherapist(
-        @Header("Authorization") authorization: String?, @Field("client_profile_id") client_id: Int?, @Field("therapist_profile_id") therapist_id: Int?
-    ): Call<String>?
-
-    @GET("session-logs")
-    fun SessionsLogs(@Header("Authorization") authorization: String?): Call<Sessions_LogResponse?>?
 }
 
