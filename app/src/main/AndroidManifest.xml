@@ -77,6 +77,8 @@
         <activity
             android:name=".activity.MainActivity"
             android:exported="true" />
+        <activity android:name=".activity.Historical_Data"
+            android:exported="false"/>
 
         <meta-data
             android:name="preloaded_fonts"

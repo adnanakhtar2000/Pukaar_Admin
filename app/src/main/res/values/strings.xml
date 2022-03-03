@@ -40,11 +40,11 @@ Third Party Content
 </string>
 
 
-<string-array name="Doctor_Type">
-          <item>Clinical Psychologist</item>
+    <string-array name="Doctor_Type">
+        <item>Clinical Psychologist</item>
         <item>Therapist</item>
 
-</string-array>
+    </string-array>
     <string-array name="Doctor_services">
         <item>Voice Call</item>
         <item>Vedio Call</item>

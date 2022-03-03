@@ -53,7 +53,7 @@ class Pending_payments_recycler_Adapater(val paymentdata: ArrayList<UserData_pay
 
             apiInterface = ApiClient.create()
             Glide.with(context)
-                .load("https://pukar.qareeb.com" + paymentdata[position].picture)
+                .load("http://pukar.qareeb.com" + paymentdata[position].picture)
                 .centerCrop()
                 .into(dialog.reciept)
 

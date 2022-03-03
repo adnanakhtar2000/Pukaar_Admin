@@ -111,10 +111,9 @@ interface ApiInterface {
         @Field("session_id") session_id: String
     ): Call<String>
 
-    @FormUrlEncoded
-    @GET("users/{id}/edit")
-    fun getConnectedUserResponse(@Header("Authorization") header: String, @Field("id") id: String): Call<ConnectUserResponse>
 
+    @GET("users/{id}/edit")
+    fun getConnectedUserResponse(@Header("Authorization") header: String, @Path(value = "id", encoded = true) id: String): Call<ConnectUserResponse>
 
     @FormUrlEncoded
     @POST("send-message")
@@ -152,6 +151,20 @@ interface ApiInterface {
         @Part("picture\"; filename=\"pp.png") file: RequestBody?
     ): Call<String?>?
 
+    @FormUrlEncoded
+    @POST("admin/approved-payment-details")
+    fun getUserSessionPaymentDetails(
+        @Header("Authorization") header: String,
+        @Field("no_of_records") no_of_records: String,
+        @Field("user_id") user_id: String
+    ): Call<PaymentDetailsResponse>
+
+    @FormUrlEncoded
+    @POST("get-graph-diary")
+    fun getGraphData(
+        @Header("Authorization") authorization: String?,
+        @Field("client_id") client_id: Int,
+    ): Call<Historical_Data_Response?>?
 
 
 }

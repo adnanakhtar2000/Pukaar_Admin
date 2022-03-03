@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:layout_marginTop="4dp"
+    app:cardCornerRadius="13dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardBackgroundColor="#EDF1FA">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:weightSum="5"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/ss_view">
+
+    <TextView
+        android:id="@+id/dateandtimeapp"
+        android:layout_width="0dp"
+        android:layout_weight="2"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:maxLength="11"
+         android:gravity="center_vertical"
+        android:layout_marginLeft="13dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Date &amp; Time"
+        android:textColor="@color/black"
+        android:textSize="14dp"
+        />
+
+    <TextView
+        android:id="@+id/app_sessions"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:gravity="center"
+
+        android:fontFamily="@font/poppins_medium"
+        android:text="Sessions"
+        android:textColor="@color/black"
+        android:textSize="14dp"
+        />
+
+
+    <TextView
+        android:id="@+id/app_cost"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:layout_marginRight="7dp"
+        android:gravity="center"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Cost"
+        android:textColor="@color/black"
+        android:textSize="14dp"
+        />
+    <ImageView
+        android:id="@+id/app_reciept"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_marginRight="7dp"
+        android:padding="5dp"
+        android:src="@drawable/ic_baseline_image_24"
+        android:fontFamily="@font/poppins_medium"
+
+        app:tint="@color/Main_color" />
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

@@ -1,13 +1,16 @@
 package com.example.pukaaradmin.Recycler_Adapters
 
 import android.content.Context
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pukaaradmin.CommonFunction
+import com.example.pukaaradmin.Fragments.Approved_PAyments_Details
 import com.example.pukaaradmin.R
 import com.example.pukaaradmin.Response.UserData_payments
 
@@ -22,6 +25,17 @@ class Approved_payments_recycler_Adapater(val paymentdata: ArrayList<UserData_pa
     //   holder.profile_image.setImageResource(profile_image[position])
         holder.patient_name.text= paymentdata[position].user.first_name + "" + paymentdata[position].user.last_name
         holder.time.text = CommonFunction.dateFormat(paymentdata[position].user.created_at)
+        holder.itemView.setOnClickListener {
+            val approvedPaymentsDetails = Approved_PAyments_Details()
+            val args = Bundle()
+            args.putString("YourKey", paymentdata[position].user.id.toString())
+            approvedPaymentsDetails.setArguments(args)
+
+            val transaction = (context as AppCompatActivity).supportFragmentManager.beginTransaction()
+            transaction?.addToBackStack("")?.add(R.id.container, approvedPaymentsDetails )
+
+            transaction.commit()
+        }
     }
 
     override fun getItemCount(): Int {

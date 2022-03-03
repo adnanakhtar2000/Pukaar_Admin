@@ -1,11 +1,13 @@
 package com.example.pukaaradmin.activity
 
+import android.app.ProgressDialog
 import android.content.Intent
 import android.os.Bundle
 import android.text.InputType
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContentProviderCompat.requireContext
 import com.example.pukaaradmin.ApiClient.ApiClient
 import com.example.pukaaradmin.R
 import com.example.pukaaradmin.Response.SignUpResponse
@@ -41,6 +43,11 @@ class Add_Therapist : AppCompatActivity() {
 
 
         addTherapistBinding.addDoctorsButton1.setOnClickListener {
+            val progressDialog = ProgressDialog(applicationContext)
+            progressDialog.setMessage("Please wait Data is Fetching...")
+            progressDialog.setTitle("Data Fetching")
+            progressDialog.setCancelable(false)
+            progressDialog.show()
 
             if (namevalidation() && about_validaiton() && mobile_number_validation() && passwordValidation() && email_validation() && cityvalidation() && servicevalidation() && therapist_focus() && type_of_doctor()){
 
@@ -61,6 +68,7 @@ class Add_Therapist : AppCompatActivity() {
 
                         if(response?.body() != null)
                         {
+                            progressDialog.dismiss()
                             //CommonFunction.saveToken(applicationContext, response.body()!!.data.token)
                             //CommonFunction.saveName(applicationContext, response.body()!!.data.first_name+" "+response.body()!!.data.last_name)
                             val intent = Intent(applicationContext , Dashboard::class.java)
@@ -69,11 +77,13 @@ class Add_Therapist : AppCompatActivity() {
                             finish()
                         }
                         else
-                            Toast.makeText(applicationContext, "Error",
+                            progressDialog.dismiss()
+                            Toast.makeText(applicationContext, "Please Enter All Fields Correctly",
                                 Toast.LENGTH_LONG).show();
                     }
 
                     override fun onFailure(call: Call<SignUpResponse>?, t: Throwable?) {
+                        progressDialog.dismiss()
                         Toast.makeText(applicationContext,"Error...",
                             Toast.LENGTH_LONG).show();
                     }

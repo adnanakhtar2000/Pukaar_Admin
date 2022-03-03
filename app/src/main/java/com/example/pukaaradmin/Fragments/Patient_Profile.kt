@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.pukaaradmin.R
 import com.example.pukaaradmin.Response.UsersData
 import com.example.pukaaradmin.activity.Chat
+import com.example.pukaaradmin.activity.Historical_Data
 import com.example.pukaaradmin.databinding.FragmentPatientProfileBinding
 
 
@@ -51,6 +52,7 @@ class Patient_Profile : Fragment() {
         patientProfileBinding.ans4.text = data.client_profile!!.medicines
         patientProfileBinding.ans5.text = data.client_profile!!.sleeping_habit
         patientProfileBinding.ans6.text = data.client_profile!!.problem
+
         }
         patientProfileBinding.button2.setOnClickListener {
             val chat = Chat()
@@ -60,12 +62,19 @@ class Patient_Profile : Fragment() {
             startActivity(intent)
         }
 
+
         patientProfileBinding.assignTheropist.setOnClickListener {
             var therapist = Assign_Therpaist_to_patient()
             val transaction = (context as AppCompatActivity).supportFragmentManager.beginTransaction()
             transaction.replace(R.id.container, therapist )
 //            transaction.disallowAddToBackStack()
             transaction.commit()
+        }
+        patientProfileBinding.button.setOnClickListener{
+            val intent = Intent(requireActivity(), Historical_Data::class.java)
+            //intent.putExtra("id",id)
+            intent.putExtra("history_key", data.id.toString())
+            startActivity(intent)
         }
 
         return patientProfileBinding.root

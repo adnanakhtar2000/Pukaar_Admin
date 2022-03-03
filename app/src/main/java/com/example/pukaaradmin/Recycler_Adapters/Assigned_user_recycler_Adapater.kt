@@ -39,8 +39,8 @@ class Assigned_user_recycler_Adapater(val data: ArrayList<UsersData> , val conte
             patientProfile.arguments = bundle
 
             val transaction = (context as AppCompatActivity).supportFragmentManager.beginTransaction()
-            transaction.replace(R.id.container, patientProfile )
-            transaction.disallowAddToBackStack()
+            transaction.addToBackStack("")?.add(R.id.container, patientProfile )
+
             transaction.commit()
 
         }
