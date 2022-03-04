@@ -37,6 +37,21 @@ class CommonFunction {
             val token = sharedPreferences.getString("token", "")
             return "Bearer "+token.toString();
         }
+        fun saveClientid(context: Context, id: String) {
+            val sharedPreferences: SharedPreferences =
+                context.getSharedPreferences("Client_ID_Diary", Context.MODE_PRIVATE)
+            val editor: SharedPreferences.Editor = sharedPreferences.edit()
+            editor.putString("client_id", id)
+            editor.apply()
+            editor.commit()
+        }
+
+        fun getClientid(context: Context): String {
+            val sharedPreferences: SharedPreferences =
+                context.getSharedPreferences("Client_ID_Diary", Context.MODE_PRIVATE)
+            val id = sharedPreferences.getString("client_id", "")
+            return id.toString();
+        }
 
         @Throws(IOException::class)
         fun createImageFile(context: Context): File? {

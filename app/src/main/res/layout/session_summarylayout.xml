@@ -10,7 +10,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-    android:weightSum="3"
+    android:weightSum="4"
     >
     <TextView
         android:id="@+id/doc_name"
@@ -24,7 +24,7 @@
         android:layout_height="55dp"
         android:layout_weight="1"/>
     <TextView
-        android:id="@+id/datetime"
+        android:id="@+id/client_name"
         android:layout_width="0dp"
         android:layout_height="55dp"
         android:text="Dr. Sterrla"
@@ -34,13 +34,25 @@
         android:textSize="14dp"
         android:layout_weight="1"/>
     <TextView
-        android:id="@+id/sessionTaken1"
+        android:id="@+id/date_time_Session"
         android:layout_width="0dp"
         android:layout_height="55dp"
         android:text="Dr. Sterrla"
         android:gravity="center"
         android:textColor="@color/black"
        android:layout_gravity="center_vertical"
+        android:fontFamily="@font/poppins_medium"
+        android:textSize="14dp"
+        android:layout_marginRight="10dp"
+        android:layout_weight="1"/>
+    <TextView
+        android:id="@+id/sessionTaken1"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:text="Dr. Sterrla"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:layout_gravity="center_vertical"
         android:fontFamily="@font/poppins_medium"
         android:textSize="14dp"
         android:layout_marginRight="10dp"

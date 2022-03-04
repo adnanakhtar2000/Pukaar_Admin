@@ -1,7 +1,10 @@
 package com.example.pukaaradmin.apiinterface
 
+import com.example.pukaaradmin.Fragments.DailyDiary_Responses
 import com.example.pukaaradmin.ModelClasses.GetMessage
 import com.example.pukaaradmin.Response.*
+
+import com.example.pukaaradmin.activity.Session_Summary_Response
 import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.http.*
@@ -133,13 +136,15 @@ interface ApiInterface {
     fun getNotification(@Header("Authorization") authorization: String?): Call<ArrayList<NotificationResponse?>?>?
 
     @FormUrlEncoded
-    @POST("admin/accept/therapist")
+    @POST("accept/therapist")
     fun assignedTherapist(
-        @Header("Authorization") authorization: String?, @Field("client_profile_id") client_id: Int?, @Field("therapist_profile_id") therapist_id: Int?
+        @Header("Authorization") authorization: String?, @Field("client_profile_id") client_id: String?, @Field("therapist_profile_id") therapist_id: String?
     ): Call<String>?
 
     @GET("session-logs")
-    fun SessionsLogs(@Header("Authorization") authorization: String?): Call<Sessions_LogResponse?>?
+    fun SessionsLogs1(@Header("Authorization") authorization: String?): Call<Session_Summary_Response>?
+
+
     @GET("forum")
     fun getForumList(@Header("Authorization") authorization: String?): Call<ForumResponse?>?
 
@@ -165,6 +170,13 @@ interface ApiInterface {
         @Header("Authorization") authorization: String?,
         @Field("client_id") client_id: Int,
     ): Call<Historical_Data_Response?>?
+
+    @FormUrlEncoded
+    @POST("admin/get-client-diary-admin")
+    fun getClientDiary(@Header("Authorization") authorization: String? , @Field("client_id") client_id: Int): Call<DailyDiary_Responses>?
+    @FormUrlEncoded
+    @POST("admin/get-client-therapist")
+    fun getTherapist_name(@Header("Authorization") authorization: String? , @Field("client_id") client_id: Int): Call<Therapist_Name>
 
 
 }

@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.viewpager.widget.ViewPager
 import com.example.pukaaradmin.R
+import com.example.pukaaradmin.activity.Session_Summary_day1
 import com.example.pukaaradmin.databinding.FragmentSessionSummaryBinding
 
 
@@ -37,9 +38,9 @@ class Session_Summary : Fragment() {
 
         //intilize Adapter
         val sessionSummaryTabAdapter = Session_Summary_Tab_Adapter(childFragmentManager)
-        sessionSummaryTabAdapter.addfragment(Session_Summary_Day() , "All Sessions")
-        sessionSummaryTabAdapter.addfragment(Session_Summary_Day() , "Pending")
-        sessionSummaryTabAdapter.addfragment(Session_Summary_Day() , "1 On 1 Sessions")
+        sessionSummaryTabAdapter.addfragment(Session_Summary_day1() , "All Sessions")
+        sessionSummaryTabAdapter.addfragment(Session_Summary_day1() , "Pending")
+        sessionSummaryTabAdapter.addfragment(Session_Summary_day1() , "1 On 1 Sessions")
         viewpager.adapter = sessionSummaryTabAdapter
         tabLayout.setupWithViewPager(viewpager)
         return sessionSummaryBinding.root

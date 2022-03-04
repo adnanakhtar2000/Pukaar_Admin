@@ -153,6 +153,7 @@
         app:layout_constraintTop_toBottomOf="@+id/view" />
 
     <TextView
+        android:id="@+id/notherapist_Assign"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="No Therapist Assigned"

@@ -43,11 +43,7 @@ class Add_Therapist : AppCompatActivity() {
 
 
         addTherapistBinding.addDoctorsButton1.setOnClickListener {
-            val progressDialog = ProgressDialog(applicationContext)
-            progressDialog.setMessage("Please wait Data is Fetching...")
-            progressDialog.setTitle("Data Fetching")
-            progressDialog.setCancelable(false)
-            progressDialog.show()
+
 
             if (namevalidation() && about_validaiton() && mobile_number_validation() && passwordValidation() && email_validation() && cityvalidation() && servicevalidation() && therapist_focus() && type_of_doctor()){
 
@@ -68,7 +64,7 @@ class Add_Therapist : AppCompatActivity() {
 
                         if(response?.body() != null)
                         {
-                            progressDialog.dismiss()
+
                             //CommonFunction.saveToken(applicationContext, response.body()!!.data.token)
                             //CommonFunction.saveName(applicationContext, response.body()!!.data.first_name+" "+response.body()!!.data.last_name)
                             val intent = Intent(applicationContext , Dashboard::class.java)
@@ -77,13 +73,13 @@ class Add_Therapist : AppCompatActivity() {
                             finish()
                         }
                         else
-                            progressDialog.dismiss()
-                            Toast.makeText(applicationContext, "Please Enter All Fields Correctly",
+
+                            Toast.makeText(applicationContext, "Please Enter All Fields Correctly" + response?.code(),
                                 Toast.LENGTH_LONG).show();
                     }
 
                     override fun onFailure(call: Call<SignUpResponse>?, t: Throwable?) {
-                        progressDialog.dismiss()
+
                         Toast.makeText(applicationContext,"Error...",
                             Toast.LENGTH_LONG).show();
                     }

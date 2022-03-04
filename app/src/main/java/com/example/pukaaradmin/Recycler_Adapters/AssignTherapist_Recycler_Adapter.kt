@@ -37,10 +37,10 @@ class AssignTherapist_Recycler_Adapter(val data : ArrayList<UsersData> , val con
         holder.time.text = CommonFunction.dateFormat(data[position].created_at)
         holder.itemView.setOnClickListener{
 
-            val therapistResponse = apiInterface.assignedTherapist(CommonFunction.getToken(context),data[position].id ,data.get(position).therapist_profile!!.id)
+            val therapistResponse = apiInterface.assignedTherapist(CommonFunction.getToken(context),data[position]!!.id.toString() ,data.get(position).therapist_profile!!.id.toString())
             therapistResponse?.enqueue(object : Callback<String> {
                 override fun onResponse(call: Call<String>, response: Response<String>) {
-                    Toast.makeText(context, "success", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, response.body() + response.message() + response.code(), Toast.LENGTH_SHORT).show()
                     val transaction = (context as AppCompatActivity).supportFragmentManager.beginTransaction()
                     transaction.remove(Availble_Therapist())
                 }

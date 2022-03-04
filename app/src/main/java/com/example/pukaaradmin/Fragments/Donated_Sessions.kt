@@ -60,8 +60,6 @@ private  lateinit var donatedSessionsBinding: FragmentDonatedSessionsBinding
                     reccyler_view.adapter = Donated_Session_Recycler_Adapter(response.body()!!.data )
                     reccyler_view.layoutManager = LinearLayoutManager(context , LinearLayoutManager.VERTICAL , false)
                     //setting data
-
-
                 }
             }
 

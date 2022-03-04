@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    tools:context=".activity.Session_Summary_day1">
+
+    <View
+        android:id="@+id/ss_view"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:background="#D2EFFC"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:orientation="horizontal"
+        android:weightSum="4"
+        app:layout_constraintTop_toTopOf="@id/ss_view"
+        app:layout_constraintBottom_toBottomOf="@id/ss_view"
+        >
+        <TextView
+            android:layout_width="0dp"
+            android:text="Dr. Name"
+            android:textColor="@color/black"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/poppins_medium"
+            android:textSize="14dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+        <TextView
+            android:id="@+id/client_name"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="Patient"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:fontFamily="@font/poppins_medium"
+            android:textSize="14dp"
+            android:layout_weight="1"/>
+        <TextView
+
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="Date"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:layout_gravity="center_vertical"
+            android:fontFamily="@font/poppins_medium"
+            android:textSize="14dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"/>
+        <TextView
+            android:id="@+id/sessionTaken1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="Sessions"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:layout_gravity="center_vertical"
+            android:fontFamily="@font/poppins_medium"
+            android:textSize="14dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"/>
+
+
+    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/session_summary_RecyclerViewDay"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/ss_view"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
