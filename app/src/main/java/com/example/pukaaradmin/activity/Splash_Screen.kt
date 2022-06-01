@@ -28,7 +28,7 @@ class Splash_Screen : AppCompatActivity() {
         Handler().postDelayed({
             if(CommonFunction.getToken(applicationContext).length>10)
             {
-                val intent = Intent(this, Dashboard::class.java);
+                val intent = Intent(this, Passcode_Verfiy::class.java);
                 startActivity(intent);
                 finish();
             }

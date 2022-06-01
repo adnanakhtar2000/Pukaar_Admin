@@ -39,6 +39,8 @@
             android:name=".payment_verification"
             android:exported="false" />
         -->
+        <activity android:name=".activity.Pass_code" android:exported="false"/>
+        <activity android:name=".activity.Passcode_Verfiy" android:exported="false"/>
         <activity
             android:name=".activity.Privacy_Policy"
             android:exported="true">

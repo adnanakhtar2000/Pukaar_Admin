@@ -119,6 +119,28 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+ <Button
+        android:id="@+id/passcode_button"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="331dp"
+        android:drawableRight="@drawable/back_arrow1"
+        android:drawableTint="@color/black"
+        android:paddingRight="17dp"
+        android:layout_marginRight="25dp"
+        android:background="@drawable/app_passcode"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="center_vertical"
+        android:backgroundTint="#EDF1FA"
+        android:paddingLeft="17dp"
+        android:text="PassCode"
+        android:textAllCaps="false"
+        android:textColor="#1E1C61"
+        android:textSize="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 

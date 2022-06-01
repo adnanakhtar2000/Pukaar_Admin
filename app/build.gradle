@@ -66,5 +66,7 @@ dependencies {
 // Chart and graph library
     implementation 'com.github.blackfizz:eazegraph:1.2.5l@aar'
     implementation 'com.nineoldandroids:library:2.4.0'
+    implementation 'com.github.aabhasr1:OtpView:v1.1.2-ktx'
+    implementation 'com.jakewharton:butterknife:10.2.3'
 
 }

@@ -58,6 +58,11 @@ class Setting_Fragment : Fragment() {
                     startActivity(Intent(this, Subscribe::class.java))
                 }
             }
+ settingBinding.passcodeButton.setOnClickListener {
+                requireActivity().run{
+                    startActivity(Intent(this, Pass_code::class.java))
+                }
+            }
 
     }
         return settingBinding.root

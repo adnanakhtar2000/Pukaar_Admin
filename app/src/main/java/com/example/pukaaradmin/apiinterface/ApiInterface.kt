@@ -178,6 +178,19 @@ interface ApiInterface {
     @POST("admin/get-client-therapist")
     fun getTherapist_name(@Header("Authorization") authorization: String? , @Field("client_id") client_id: Int): Call<Therapist_Name>
 
+    @FormUrlEncoded
+    @POST("set-passcode")
+    fun passcode_call(
+        @Header("Authorization") authorization: String?,
+        @Field("passcode") passcode: String?,
+        @Field("c_passcode") c_passcode: String?
+    ): Call<PasscodeResponse?>?
 
+    @FormUrlEncoded
+    @POST("passcode")
+    fun passcode_verify(
+        @Header("Authorization") authorization: String?,
+        @Field("passcode") passcode: String?
+    ): Call<PasscodeResponse?>?
 }
 

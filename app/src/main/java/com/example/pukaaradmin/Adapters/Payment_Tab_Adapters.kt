@@ -21,5 +21,4 @@ fun addfragment(fragment: Fragment , title : String){
     fragmentlist.add(fragment)
     fragmenttitle.add(title)
 }
-
 }
